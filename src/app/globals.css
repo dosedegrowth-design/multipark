@@ -1,26 +1,131 @@
 @import "tailwindcss";
 
+@theme {
+  /* === Brand Colors === */
+  --color-mp-red: #E11D2E;
+  --color-mp-red-hover: #C8101F;
+  --color-mp-red-soft: #FEE5E7;
+  --color-mp-wine-900: #1A0A0F;
+  --color-mp-wine-800: #2A0D14;
+  --color-mp-wine-700: #3D0A12;
+
+  /* === Surfaces === */
+  --color-mp-cream: #F4F1ED;
+  --color-mp-paper: #FAFAF7;
+  --color-mp-ink: #0A0A0A;
+  --color-mp-ink-soft: #1A1A1A;
+  --color-mp-line: #E8E5E0;
+  --color-mp-line-dark: #1F1F1F;
+
+  /* === Semantic === */
+  --color-mp-success: #10B981;
+  --color-mp-success-soft: #D1FAE5;
+  --color-mp-warning: #F59E0B;
+  --color-mp-warning-soft: #FEF3C7;
+  --color-mp-info: #3B82F6;
+
+  /* === Text === */
+  --color-mp-text: #1A1A1A;
+  --color-mp-text-soft: #6B6B6B;
+  --color-mp-text-muted: #9A9A9A;
+  --color-mp-text-on-dark: #FAFAF7;
+  --color-mp-text-on-dark-soft: #B0B0B0;
+
+  /* === Fonts === */
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-ibm-plex-mono), "IBM Plex Mono", ui-monospace, monospace;
+  --font-plate: var(--font-jetbrains-mono), "JetBrains Mono", ui-monospace, monospace;
+
+  /* === Radius === */
+  --radius-card: 12px;
+  --radius-button: 8px;
+
+  /* === Shadows === */
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-pop: 0 10px 30px rgba(0, 0, 0, 0.08), 0 4px 10px rgba(0, 0, 0, 0.04);
+
+  /* === Container === */
+  --container-7xl: 1440px;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: var(--color-mp-paper);
+  --foreground: var(--color-mp-text);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  border-color: var(--color-mp-line);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11";
 }
+
+/* === Typography utilities === */
+.font-mono { font-family: var(--font-mono); letter-spacing: 0.02em; }
+.font-plate { font-family: var(--font-plate); letter-spacing: 0.05em; }
+
+.label-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-mp-red);
+}
+
+/* === Gradients === */
+.bg-hero-dark {
+  background:
+    radial-gradient(circle at 100% 50%, rgba(225, 29, 46, 0.18) 0%, transparent 50%),
+    linear-gradient(135deg, var(--color-mp-wine-900) 0%, var(--color-mp-wine-700) 100%);
+}
+
+.bg-card-dark {
+  background: linear-gradient(180deg, #111111 0%, #0A0A0A 100%);
+}
+
+/* === Mercosul plate === */
+.plate-mercosul {
+  font-family: var(--font-plate);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* === Scrollbar === */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-mp-line); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-mp-text-muted); }
+
+/* === Animations === */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.9); }
+}
+
+.animate-fade-up { animation: fade-up 0.5s ease-out forwards; }
+.animate-pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
