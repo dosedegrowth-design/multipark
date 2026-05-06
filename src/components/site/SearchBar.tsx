@@ -14,11 +14,11 @@ export function SearchBar({ variant = "hero" }: { variant?: "hero" | "compact" }
     <div
       className={cn(
         "rounded-[14px] bg-white shadow-[0_20px_60px_rgba(0,0,0,0.12)] overflow-hidden",
-        variant === "hero" && "border border-[--color-mp-line]"
+        variant === "hero" && "border border-[var(--color-mp-line)]"
       )}
     >
       {/* row de inputs */}
-      <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr_1fr_auto] divide-y md:divide-y-0 md:divide-x divide-[--color-mp-line]">
+      <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr_1fr_auto] divide-y md:divide-y-0 md:divide-x divide-[var(--color-mp-line)]">
         <SearchField icon={MapPin} label="Origem" value="Aeroporto de Guarulhos · GRU" />
         <SearchField icon={Calendar} label="Check-in" value="14 mai · 06:00" />
         <SearchField icon={Calendar} label="Check-out" value="21 mai · 22:00" />
@@ -31,12 +31,12 @@ export function SearchBar({ variant = "hero" }: { variant?: "hero" | "compact" }
       </div>
 
       {/* slider preço */}
-      <div className="px-5 py-4 border-t border-[--color-mp-line] bg-[--color-mp-cream]/40 flex items-center gap-4">
+      <div className="px-5 py-4 border-t border-[var(--color-mp-line)] bg-mp-cream-50 flex items-center gap-4">
         <div className="hidden sm:flex items-center gap-2 shrink-0">
-          <span className="label-tag text-[--color-mp-text-soft]">
+          <span className="label-tag text-[var(--color-mp-text-soft)]">
             Deslize os dias
           </span>
-          <span className="font-mono text-[11px] text-[--color-mp-text]">
+          <span className="font-mono text-[11px] text-[var(--color-mp-text)]">
             · {days} dias
           </span>
         </div>
@@ -49,10 +49,10 @@ export function SearchBar({ variant = "hero" }: { variant?: "hero" | "compact" }
           className="flex-1 mp-range"
         />
         <div className="text-right shrink-0">
-          <div className="text-xs text-[--color-mp-text-soft]">
+          <div className="text-xs text-[var(--color-mp-text-soft)]">
             R$ {dailyPrice}/dia
           </div>
-          <div className="font-semibold text-[--color-mp-text] tabular-nums">
+          <div className="font-semibold text-[var(--color-mp-text)] tabular-nums">
             total R$ {total.toLocaleString("pt-BR")}
           </div>
         </div>
@@ -108,13 +108,13 @@ function SearchField({
   value: string;
 }) {
   return (
-    <div className="flex items-center gap-3 p-4 cursor-pointer hover:bg-[--color-mp-cream]/40 transition-colors group">
-      <div className="h-9 w-9 rounded-lg bg-[--color-mp-cream] flex items-center justify-center shrink-0 group-hover:bg-[--color-mp-red-soft] transition-colors">
-        <Icon className="h-4 w-4 text-[--color-mp-text-soft] group-hover:text-[--color-mp-red] transition-colors" />
+    <div className="flex items-center gap-3 p-4 cursor-pointer hover:bg-mp-cream-50 transition-colors group">
+      <div className="h-9 w-9 rounded-lg bg-[var(--color-mp-cream)] flex items-center justify-center shrink-0 group-hover:bg-[var(--color-mp-red-soft)] transition-colors">
+        <Icon className="h-4 w-4 text-[var(--color-mp-text-soft)] group-hover:text-[var(--color-mp-red)] transition-colors" />
       </div>
       <div className="min-w-0 flex-1">
-        <div className="label-tag text-[--color-mp-text-soft]">{label}</div>
-        <div className="text-sm font-medium text-[--color-mp-text] truncate mt-0.5">
+        <div className="label-tag text-[var(--color-mp-text-soft)]">{label}</div>
+        <div className="text-sm font-medium text-[var(--color-mp-text)] truncate mt-0.5">
           {value}
         </div>
       </div>

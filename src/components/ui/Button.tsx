@@ -4,19 +4,19 @@ import { forwardRef } from "react";
 import Link from "next/link";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 font-medium transition-all whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-[--color-mp-red] focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none",
+  "inline-flex items-center justify-center gap-2 font-medium transition-all whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-mp-red)] focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none",
   {
     variants: {
       variant: {
         primary:
-          "bg-[--color-mp-red] text-white hover:bg-[--color-mp-red-hover] active:scale-[0.98]",
+          "bg-[var(--color-mp-red)] text-white hover:bg-[var(--color-mp-red-hover)] active:scale-[0.98]",
         secondary:
-          "bg-[--color-mp-ink] text-white hover:bg-[--color-mp-ink-soft] active:scale-[0.98]",
+          "bg-[var(--color-mp-ink)] text-white hover:bg-[var(--color-mp-ink-soft)] active:scale-[0.98]",
         outline:
-          "border border-[--color-mp-line] bg-transparent text-[--color-mp-text] hover:border-[--color-mp-text] hover:bg-white",
+          "border border-[var(--color-mp-line)] bg-transparent text-[var(--color-mp-text)] hover:border-[var(--color-mp-text)] hover:bg-white",
         ghost:
-          "bg-transparent text-[--color-mp-text] hover:bg-[--color-mp-line]/40",
-        link: "text-[--color-mp-red] hover:underline underline-offset-4 px-0",
+          "bg-transparent text-[var(--color-mp-text)] hover:bg-mp-cream",
+        link: "text-[var(--color-mp-red)] hover:underline underline-offset-4 px-0",
       },
       size: {
         sm: "h-8 px-3 text-xs rounded-[6px]",

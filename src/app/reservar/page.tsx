@@ -27,7 +27,7 @@ export default function ReservarPage() {
   return (
     <>
       <Header />
-      <main className="flex-1 bg-[--color-mp-paper] pb-20">
+      <main className="flex-1 bg-[var(--color-mp-paper)] pb-20">
         <Container>
           {/* Stepper */}
           <div className="py-7 md:py-10">
@@ -39,10 +39,10 @@ export default function ReservarPage() {
                       className={cn(
                         "h-9 w-9 rounded-full flex items-center justify-center font-semibold text-sm transition-all",
                         step > s.n
-                          ? "bg-[--color-mp-success] text-white"
+                          ? "bg-[var(--color-mp-success)] text-white"
                           : step === s.n
-                          ? "bg-[--color-mp-red] text-white"
-                          : "bg-[--color-mp-cream] text-[--color-mp-text-soft]"
+                          ? "bg-[var(--color-mp-red)] text-white"
+                          : "bg-[var(--color-mp-cream)] text-[var(--color-mp-text-soft)]"
                       )}
                     >
                       {step > s.n ? <Check className="h-4 w-4" /> : s.n}
@@ -51,8 +51,8 @@ export default function ReservarPage() {
                       className={cn(
                         "font-mono text-[10px] uppercase tracking-[0.18em]",
                         step >= s.n
-                          ? "text-[--color-mp-text]"
-                          : "text-[--color-mp-text-muted]"
+                          ? "text-[var(--color-mp-text)]"
+                          : "text-[var(--color-mp-text-muted)]"
                       )}
                     >
                       {s.label}
@@ -62,7 +62,7 @@ export default function ReservarPage() {
                     <div
                       className={cn(
                         "flex-1 h-px mx-2 mb-7",
-                        step > s.n ? "bg-[--color-mp-success]" : "bg-[--color-mp-line]"
+                        step > s.n ? "bg-[var(--color-mp-success)]" : "bg-[var(--color-mp-line)]"
                       )}
                     />
                   )}
@@ -96,14 +96,14 @@ export default function ReservarPage() {
 // ====================================================================
 function Step1({ onNext }: { onNext: () => void }) {
   return (
-    <div className="bg-white border border-[--color-mp-line] rounded-3xl p-6 md:p-10">
+    <div className="bg-white border border-[var(--color-mp-line)] rounded-3xl p-6 md:p-10">
       <Badge variant="redSoft" size="md" className="mb-4">
         01 · Busca
       </Badge>
-      <h1 className="text-3xl md:text-4xl font-semibold tracking-tight leading-[1.1] text-[--color-mp-ink]">
+      <h1 className="text-3xl md:text-4xl font-semibold tracking-tight leading-[1.1] text-[var(--color-mp-ink)]">
         Onde você está indo?
       </h1>
-      <p className="mt-2 text-[--color-mp-text-soft]">
+      <p className="mt-2 text-[var(--color-mp-text-soft)]">
         Aeroporto, endereço ou CEP. Geolocalização ativa pra detectar o mais próximo.
       </p>
 
@@ -116,7 +116,7 @@ function Step1({ onNext }: { onNext: () => void }) {
       </div>
 
       <div className="mt-7 flex items-center justify-between">
-        <span className="text-xs text-[--color-mp-text-soft]">
+        <span className="text-xs text-[var(--color-mp-text-soft)]">
           7 dias selecionados
         </span>
         <Button size="lg" onClick={onNext}>
@@ -138,12 +138,12 @@ function Field({
   value: string;
 }) {
   return (
-    <button className="w-full flex items-center gap-3 p-4 rounded-xl border border-[--color-mp-line] hover:border-[--color-mp-text] transition-colors text-left">
-      <div className="h-10 w-10 rounded-lg bg-[--color-mp-cream] flex items-center justify-center shrink-0">
-        <Icon className="h-4 w-4 text-[--color-mp-text-soft]" />
+    <button className="w-full flex items-center gap-3 p-4 rounded-xl border border-[var(--color-mp-line)] hover:border-[var(--color-mp-text)] transition-colors text-left">
+      <div className="h-10 w-10 rounded-lg bg-[var(--color-mp-cream)] flex items-center justify-center shrink-0">
+        <Icon className="h-4 w-4 text-[var(--color-mp-text-soft)]" />
       </div>
       <div className="min-w-0 flex-1">
-        <div className="font-mono text-[10px] uppercase tracking-[0.15em] text-[--color-mp-text-soft]">
+        <div className="font-mono text-[10px] uppercase tracking-[0.15em] text-[var(--color-mp-text-soft)]">
           {label}
         </div>
         <div className="text-sm font-medium truncate mt-0.5">{value}</div>
@@ -160,9 +160,9 @@ function Step2({ onNext }: { onNext: (u: (typeof UNITS)[number]) => void }) {
       <Badge variant="redSoft" size="md" className="mb-4">
         02 · Listagem
       </Badge>
-      <h1 className="text-3xl md:text-4xl font-semibold tracking-tight leading-[1.1] text-[--color-mp-ink]">
+      <h1 className="text-3xl md:text-4xl font-semibold tracking-tight leading-[1.1] text-[var(--color-mp-ink)]">
         {list.length} unidades encontradas
-        <span className="text-[--color-mp-text-muted] font-normal text-2xl block mt-1">
+        <span className="text-[var(--color-mp-text-muted)] font-normal text-2xl block mt-1">
           em Guarulhos · 14 → 21 mai
         </span>
       </h1>
@@ -172,9 +172,9 @@ function Step2({ onNext }: { onNext: (u: (typeof UNITS)[number]) => void }) {
           <button
             key={u.id}
             onClick={() => onNext(u)}
-            className="group text-left bg-white border border-[--color-mp-line] rounded-2xl p-5 hover:border-[--color-mp-red] hover:shadow-[var(--shadow-card)] transition-all"
+            className="group text-left bg-white border border-[var(--color-mp-line)] rounded-2xl p-5 hover:border-[var(--color-mp-red)] hover:shadow-[var(--shadow-card)] transition-all"
           >
-            <div className="aspect-[5/3] rounded-xl bg-[--color-mp-ink] mb-4 relative overflow-hidden">
+            <div className="aspect-[5/3] rounded-xl bg-[var(--color-mp-ink)] mb-4 relative overflow-hidden">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(225,29,46,0.4),transparent_60%)]" />
               <div className="absolute top-3 left-3 flex gap-1.5">
                 {u.badges.slice(0, 2).map((b) => (
@@ -187,25 +187,25 @@ function Step2({ onNext }: { onNext: (u: (typeof UNITS)[number]) => void }) {
             <div className="flex items-start justify-between gap-2 mb-1">
               <span className="font-semibold text-base">{u.name}</span>
               <div className="text-right shrink-0">
-                <div className="text-xs text-[--color-mp-text-muted] line-through">
+                <div className="text-xs text-[var(--color-mp-text-muted)] line-through">
                   R$ {u.prices.avulso.full}
                 </div>
-                <div className="text-lg font-semibold text-[--color-mp-red]">
+                <div className="text-lg font-semibold text-[var(--color-mp-red)]">
                   R$ {u.prices.avulso.promo}
-                  <span className="text-xs font-normal text-[--color-mp-text-soft]">
+                  <span className="text-xs font-normal text-[var(--color-mp-text-soft)]">
                     /dia
                   </span>
                 </div>
               </div>
             </div>
-            <div className="flex items-center gap-2 text-xs text-[--color-mp-text-soft]">
+            <div className="flex items-center gap-2 text-xs text-[var(--color-mp-text-soft)]">
               <MapPin className="h-3 w-3" />
               {u.distance?.km} km · {u.distance?.minutes} min
               <span className="mx-1">·</span>
-              <Star className="h-3 w-3 fill-[--color-mp-warning] text-[--color-mp-warning]" />
+              <Star className="h-3 w-3 fill-[var(--color-mp-warning)] text-[var(--color-mp-warning)]" />
               {u.rating}
             </div>
-            <div className="mt-3 flex items-center gap-1 text-sm font-medium text-[--color-mp-red] group-hover:gap-2 transition-all">
+            <div className="mt-3 flex items-center gap-1 text-sm font-medium text-[var(--color-mp-red)] group-hover:gap-2 transition-all">
               Ver opção <ChevronRight className="h-4 w-4" />
             </div>
           </button>
@@ -218,26 +218,26 @@ function Step2({ onNext }: { onNext: (u: (typeof UNITS)[number]) => void }) {
 // ====================================================================
 function Step3({ onNext }: { onNext: () => void }) {
   return (
-    <div className="bg-white border border-[--color-mp-line] rounded-3xl p-6 md:p-10">
+    <div className="bg-white border border-[var(--color-mp-line)] rounded-3xl p-6 md:p-10">
       <Badge variant="redSoft" size="md" className="mb-4">
         03 · Veículo
       </Badge>
-      <h1 className="text-3xl md:text-4xl font-semibold tracking-tight leading-[1.1] text-[--color-mp-ink]">
+      <h1 className="text-3xl md:text-4xl font-semibold tracking-tight leading-[1.1] text-[var(--color-mp-ink)]">
         Cadastre seu veículo
       </h1>
-      <p className="mt-2 text-[--color-mp-text-soft]">
+      <p className="mt-2 text-[var(--color-mp-text-soft)]">
         Usamos a placa pra liberação automática na cancela.
       </p>
 
       <div className="mt-8 grid md:grid-cols-2 gap-6">
         <div>
-          <label className="font-mono text-[10px] uppercase tracking-[0.15em] text-[--color-mp-text-soft] mb-2 block">
+          <label className="font-mono text-[10px] uppercase tracking-[0.15em] text-[var(--color-mp-text-soft)] mb-2 block">
             Placa
           </label>
           <input
             type="text"
             defaultValue="ABC1D23"
-            className="w-full px-4 py-3 rounded-xl border border-[--color-mp-line] font-plate text-lg tracking-[0.2em] uppercase focus:outline-none focus:border-[--color-mp-red]"
+            className="w-full px-4 py-3 rounded-xl border border-[var(--color-mp-line)] font-plate text-lg tracking-[0.2em] uppercase focus:outline-none focus:border-[var(--color-mp-red)]"
           />
           <div className="mt-4">
             <MercosulPlate plate="ABC1D23" size="md" />
@@ -245,37 +245,37 @@ function Step3({ onNext }: { onNext: () => void }) {
         </div>
         <div className="space-y-4">
           <div>
-            <label className="font-mono text-[10px] uppercase tracking-[0.15em] text-[--color-mp-text-soft] mb-2 block">
+            <label className="font-mono text-[10px] uppercase tracking-[0.15em] text-[var(--color-mp-text-soft)] mb-2 block">
               Modelo
             </label>
             <input
               type="text"
               defaultValue="Honda Civic 2024"
-              className="w-full px-4 py-3 rounded-xl border border-[--color-mp-line] focus:outline-none focus:border-[--color-mp-red]"
+              className="w-full px-4 py-3 rounded-xl border border-[var(--color-mp-line)] focus:outline-none focus:border-[var(--color-mp-red)]"
             />
           </div>
           <div>
-            <label className="font-mono text-[10px] uppercase tracking-[0.15em] text-[--color-mp-text-soft] mb-2 block">
+            <label className="font-mono text-[10px] uppercase tracking-[0.15em] text-[var(--color-mp-text-soft)] mb-2 block">
               Cor
             </label>
             <input
               type="text"
               defaultValue="Preto"
-              className="w-full px-4 py-3 rounded-xl border border-[--color-mp-line] focus:outline-none focus:border-[--color-mp-red]"
+              className="w-full px-4 py-3 rounded-xl border border-[var(--color-mp-line)] focus:outline-none focus:border-[var(--color-mp-red)]"
             />
           </div>
         </div>
       </div>
 
-      <div className="mt-8 pt-6 border-t border-[--color-mp-line]">
-        <div className="font-mono text-[10px] uppercase tracking-[0.15em] text-[--color-mp-text-soft] mb-3">
+      <div className="mt-8 pt-6 border-t border-[var(--color-mp-line)]">
+        <div className="font-mono text-[10px] uppercase tracking-[0.15em] text-[var(--color-mp-text-soft)] mb-3">
           Identifique-se
         </div>
         <div className="grid md:grid-cols-2 gap-3">
-          <button className="px-4 py-3 rounded-xl border border-[--color-mp-line] hover:border-[--color-mp-text] text-sm font-medium flex items-center justify-center gap-2">
+          <button className="px-4 py-3 rounded-xl border border-[var(--color-mp-line)] hover:border-[var(--color-mp-text)] text-sm font-medium flex items-center justify-center gap-2">
             <span>Continuar com Google</span>
           </button>
-          <button className="px-4 py-3 rounded-xl border border-[--color-mp-line] hover:border-[--color-mp-text] text-sm font-medium flex items-center justify-center gap-2">
+          <button className="px-4 py-3 rounded-xl border border-[var(--color-mp-line)] hover:border-[var(--color-mp-text)] text-sm font-medium flex items-center justify-center gap-2">
             <span>Continuar com Apple</span>
           </button>
         </div>
@@ -283,12 +283,12 @@ function Step3({ onNext }: { onNext: () => void }) {
           <input
             type="text"
             placeholder="Email"
-            className="px-4 py-3 rounded-xl border border-[--color-mp-line] focus:outline-none focus:border-[--color-mp-red]"
+            className="px-4 py-3 rounded-xl border border-[var(--color-mp-line)] focus:outline-none focus:border-[var(--color-mp-red)]"
           />
           <input
             type="text"
             placeholder="WhatsApp"
-            className="px-4 py-3 rounded-xl border border-[--color-mp-line] focus:outline-none focus:border-[--color-mp-red]"
+            className="px-4 py-3 rounded-xl border border-[var(--color-mp-line)] focus:outline-none focus:border-[var(--color-mp-red)]"
           />
         </div>
       </div>
@@ -320,10 +320,10 @@ function Step4({
       <Badge variant="redSoft" size="md" className="mb-4">
         04 · Pagar
       </Badge>
-      <h1 className="text-3xl md:text-4xl font-semibold tracking-tight leading-[1.1] text-[--color-mp-ink]">
+      <h1 className="text-3xl md:text-4xl font-semibold tracking-tight leading-[1.1] text-[var(--color-mp-ink)]">
         Como você quer pagar?
       </h1>
-      <p className="mt-2 text-[--color-mp-text-soft]">
+      <p className="mt-2 text-[var(--color-mp-text-soft)]">
         Pague agora com PIX e economize 12%, ou pague na chegada sem desconto.
       </p>
 
@@ -362,8 +362,8 @@ function Step4({
           />
         </div>
 
-        <div className="bg-white border border-[--color-mp-line] rounded-2xl p-5 h-fit lg:sticky lg:top-24">
-          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[--color-mp-text-soft] mb-3">
+        <div className="bg-white border border-[var(--color-mp-line)] rounded-2xl p-5 h-fit lg:sticky lg:top-24">
+          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-mp-text-soft)] mb-3">
             Resumo da reserva
           </div>
           <div className="space-y-2.5 mb-4 text-sm">
@@ -372,12 +372,12 @@ function Step4({
             <Row label="Diárias" value="7" />
             <Row label="Veículo" value="ABC1D23 · Civic" />
           </div>
-          <div className="border-t border-[--color-mp-line] pt-4">
+          <div className="border-t border-[var(--color-mp-line)] pt-4">
             <div className="flex items-center justify-between">
               <span className="font-medium">Total</span>
               <div className="text-right">
                 {method === "pix" && (
-                  <div className="text-xs text-[--color-mp-text-muted] line-through">
+                  <div className="text-xs text-[var(--color-mp-text-muted)] line-through">
                     R$ {total}
                   </div>
                 )}
@@ -392,7 +392,7 @@ function Step4({
               {method === "later" && "Garantir vaga"}
               <ArrowRight className="h-4 w-4" />
             </Button>
-            <div className="text-center text-[10px] text-[--color-mp-text-muted] font-mono uppercase tracking-wider mt-3">
+            <div className="text-center text-[10px] text-[var(--color-mp-text-muted)] font-mono uppercase tracking-wider mt-3">
               Pagamento processado pelo Asaas · split automático
             </div>
           </div>
@@ -405,7 +405,7 @@ function Step4({
 function Row({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex items-center justify-between gap-3">
-      <span className="text-[--color-mp-text-soft]">{label}</span>
+      <span className="text-[var(--color-mp-text-soft)]">{label}</span>
       <span className="font-medium text-right truncate">{value}</span>
     </div>
   );
@@ -437,8 +437,8 @@ function PayOption({
       className={cn(
         "w-full text-left p-5 rounded-2xl border-2 transition-all",
         active
-          ? "border-[--color-mp-red] bg-white shadow-[var(--shadow-card)]"
-          : "border-[--color-mp-line] bg-white hover:border-[--color-mp-text]"
+          ? "border-[var(--color-mp-red)] bg-white shadow-[var(--shadow-card)]"
+          : "border-[var(--color-mp-line)] bg-white hover:border-[var(--color-mp-text)]"
       )}
     >
       <div className="flex items-start justify-between gap-3 mb-1">
@@ -447,8 +447,8 @@ function PayOption({
             className={cn(
               "h-5 w-5 rounded-full border-2 flex items-center justify-center shrink-0",
               active
-                ? "border-[--color-mp-red] bg-[--color-mp-red]"
-                : "border-[--color-mp-line]"
+                ? "border-[var(--color-mp-red)] bg-[var(--color-mp-red)]"
+                : "border-[var(--color-mp-line)]"
             )}
           >
             {active && <div className="h-1.5 w-1.5 bg-white rounded-full" />}
@@ -461,13 +461,13 @@ function PayOption({
       </div>
       <div className="ml-7 mt-1 flex items-baseline gap-2">
         {full && (
-          <span className="text-xs text-[--color-mp-text-muted] line-through tabular-nums">
+          <span className="text-xs text-[var(--color-mp-text-muted)] line-through tabular-nums">
             R$ {full}
           </span>
         )}
         <span className="text-xl font-semibold tabular-nums">R$ {value}</span>
       </div>
-      <p className="ml-7 mt-1.5 text-xs text-[--color-mp-text-soft]">
+      <p className="ml-7 mt-1.5 text-xs text-[var(--color-mp-text-soft)]">
         {description}
       </p>
     </button>
@@ -477,23 +477,23 @@ function PayOption({
 // ====================================================================
 function Step5({ unit }: { unit: (typeof UNITS)[number] }) {
   return (
-    <div className="bg-white border border-[--color-mp-line] rounded-3xl p-6 md:p-10 text-center">
-      <div className="inline-flex h-16 w-16 rounded-full bg-[--color-mp-success-soft] items-center justify-center mb-6">
-        <Check className="h-7 w-7 text-[--color-mp-success]" />
+    <div className="bg-white border border-[var(--color-mp-line)] rounded-3xl p-6 md:p-10 text-center">
+      <div className="inline-flex h-16 w-16 rounded-full bg-[var(--color-mp-success-soft)] items-center justify-center mb-6">
+        <Check className="h-7 w-7 text-[var(--color-mp-success)]" />
       </div>
       <Badge variant="success" size="md" dot className="mb-3 mx-auto">
         Reserva confirmada
       </Badge>
-      <h1 className="text-3xl md:text-4xl font-semibold tracking-tight leading-[1.1] text-[--color-mp-ink]">
+      <h1 className="text-3xl md:text-4xl font-semibold tracking-tight leading-[1.1] text-[var(--color-mp-ink)]">
         Tudo pronto, Mariana 🚗
       </h1>
-      <p className="mt-2 text-[--color-mp-text-soft] max-w-md mx-auto">
+      <p className="mt-2 text-[var(--color-mp-text-soft)] max-w-md mx-auto">
         Sua vaga está garantida em {unit.name}. Comprovante e QR Code chegaram
         no seu email + WhatsApp.
       </p>
 
       {/* QR mock */}
-      <div className="mt-8 inline-flex flex-col items-center gap-3 p-7 rounded-2xl bg-[--color-mp-ink]">
+      <div className="mt-8 inline-flex flex-col items-center gap-3 p-7 rounded-2xl bg-[var(--color-mp-ink)]">
         <div className="h-40 w-40 bg-white p-3 rounded-xl flex items-center justify-center">
           <FakeQR />
         </div>
@@ -515,11 +515,11 @@ function Step5({ unit }: { unit: (typeof UNITS)[number] }) {
         </Button>
       </div>
 
-      <div className="mt-8 max-w-md mx-auto p-4 rounded-xl bg-[--color-mp-cream]/60 text-left">
-        <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-[--color-mp-red] mb-2">
+      <div className="mt-8 max-w-md mx-auto p-4 rounded-xl bg-mp-cream-60 text-left">
+        <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-mp-red)] mb-2">
           Próximos passos
         </div>
-        <ul className="text-sm space-y-1.5 text-[--color-mp-text]">
+        <ul className="text-sm space-y-1.5 text-[var(--color-mp-text)]">
           <li>• Lembrete por WhatsApp 24h e 2h antes</li>
           <li>• Apresente o QR na entrada da unidade</li>
           <li>• Cancelamento grátis até 48h antes</li>
@@ -537,7 +537,7 @@ function FakeQR() {
           key={i}
           className={cn(
             "aspect-square",
-            (i * 17) % 3 === 0 || (i * 7) % 5 === 0 ? "bg-[--color-mp-ink]" : "bg-white"
+            (i * 17) % 3 === 0 || (i * 7) % 5 === 0 ? "bg-[var(--color-mp-ink)]" : "bg-white"
           )}
         />
       ))}

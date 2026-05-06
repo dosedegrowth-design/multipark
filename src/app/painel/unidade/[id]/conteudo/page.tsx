@@ -49,9 +49,9 @@ export default function ConteudoPage() {
               ))}
             </div>
 
-            <div className="border-2 border-dashed border-[--color-mp-red]/50 rounded-xl p-5 text-center bg-[--color-mp-red]/5 hover:bg-[--color-mp-red]/10 transition-colors cursor-pointer">
-              <Upload className="h-5 w-5 text-[--color-mp-red] mx-auto mb-1.5" />
-              <div className="text-sm font-medium text-[--color-mp-red]">
+            <div className="border-2 border-dashed border-mp-red-50 rounded-xl p-5 text-center bg-mp-red-10 hover:bg-mp-red-10 transition-colors cursor-pointer">
+              <Upload className="h-5 w-5 text-[var(--color-mp-red)] mx-auto mb-1.5" />
+              <div className="text-sm font-medium text-[var(--color-mp-red)]">
                 Arrastar fotos aqui
               </div>
               <div className="text-xs text-white/40 mt-0.5 font-mono uppercase tracking-wider">
@@ -64,7 +64,7 @@ export default function ConteudoPage() {
           <Card>
             <div className="flex items-center justify-between mb-4">
               <div className="text-base font-semibold">Tabela de preços</div>
-              <button className="text-xs font-medium text-[--color-mp-red] flex items-center gap-1 hover:gap-2 transition-all">
+              <button className="text-xs font-medium text-[var(--color-mp-red)] flex items-center gap-1 hover:gap-2 transition-all">
                 <Plus className="h-3.5 w-3.5" />
                 Criar cupom
               </button>
@@ -89,7 +89,7 @@ export default function ConteudoPage() {
               </tbody>
             </table>
 
-            <div className="mt-5 flex items-center justify-between p-3 rounded-xl bg-[--color-mp-red]/10 border border-[--color-mp-red]/30">
+            <div className="mt-5 flex items-center justify-between p-3 rounded-xl bg-mp-red-10 border border-mp-red-30">
               <div>
                 <div className="font-medium text-sm">Preço dinâmico</div>
                 <div className="text-xs text-white/55 mt-0.5">
@@ -134,8 +134,8 @@ export default function ConteudoPage() {
               <Field label="Meta Pixel ID" value="847291056334821" badge="Editar" />
             </div>
 
-            <div className="mt-4 p-3 rounded-xl bg-[--color-mp-red]/10 border border-[--color-mp-red]/30">
-              <div className="font-mono text-[10px] uppercase tracking-[0.15em] text-[--color-mp-red] mb-1.5">
+            <div className="mt-4 p-3 rounded-xl bg-mp-red-10 border border-mp-red-30">
+              <div className="font-mono text-[10px] uppercase tracking-[0.15em] text-[var(--color-mp-red)] mb-1.5">
                 Escopo isolado
               </div>
               <p className="text-xs text-white/65 leading-relaxed">
@@ -178,7 +178,7 @@ export default function ConteudoPage() {
                 Ao publicar
               </div>
               <div className="font-mono text-sm text-white">
-                multipark.com.br/unidades/<span className="text-[--color-mp-red]">[slug]</span>
+                multipark.com.br/unidades/<span className="text-[var(--color-mp-red)]">[slug]</span>
               </div>
               <div className="text-[11px] text-white/50 mt-1.5">
                 SEO indexado · WhatsApp ativo · pagamentos prontos
@@ -203,7 +203,7 @@ function Card({
       className={cn(
         "rounded-2xl p-5 border",
         variant === "red"
-          ? "bg-[--color-mp-red] border-[--color-mp-red] text-white"
+          ? "bg-[var(--color-mp-red)] border-[var(--color-mp-red)] text-white"
           : "bg-white/[0.03] border-white/10"
       )}
     >
@@ -216,7 +216,7 @@ function PhotoThumb({ idx, cover }: { idx: number; cover?: boolean }) {
   return (
     <div className="aspect-square rounded-lg bg-gradient-to-br from-[#3D0A12] via-[#1A0A0F] to-[#0A0A0A] relative overflow-hidden group cursor-grab">
       {cover && (
-        <div className="absolute top-1 left-1 px-1.5 py-0.5 bg-[--color-mp-red] text-white text-[8px] font-mono uppercase tracking-wider rounded">
+        <div className="absolute top-1 left-1 px-1.5 py-0.5 bg-[var(--color-mp-red)] text-white text-[8px] font-mono uppercase tracking-wider rounded">
           Capa
         </div>
       )}
@@ -247,14 +247,14 @@ function PriceRow({
     <tr
       className={cn(
         "text-sm",
-        popular && "bg-[--color-mp-red]/15"
+        popular && "bg-mp-red-15"
       )}
     >
       <td className="py-3">
         <div className="flex items-center gap-2">
           <span className="font-medium">{type}</span>
           {popular && (
-            <span className="font-mono text-[9px] tracking-[0.18em] uppercase bg-[--color-mp-red] text-white px-1.5 py-0.5 rounded">
+            <span className="font-mono text-[9px] tracking-[0.18em] uppercase bg-[var(--color-mp-red)] text-white px-1.5 py-0.5 rounded">
               ★ Popular
             </span>
           )}
@@ -269,7 +269,7 @@ function PriceRow({
         <input
           type="checkbox"
           defaultChecked
-          className="h-4 w-4 accent-[--color-mp-red]"
+          className="h-4 w-4 accent-[var(--color-mp-red)]"
         />
       </td>
     </tr>
@@ -291,13 +291,13 @@ function ConnectedTag({
         "inline-flex items-center gap-1.5 px-2 py-1 rounded-md text-xs font-medium",
         placeholder
           ? "border border-dashed border-white/20 text-white/40"
-          : "bg-[--color-mp-success]/15 text-[--color-mp-success]"
+          : "bg-mp-success-15 text-[var(--color-mp-success)]"
       )}
     >
       <span
         className={cn(
           "h-1.5 w-1.5 rounded-full",
-          placeholder ? "bg-white/20" : "bg-[--color-mp-success]"
+          placeholder ? "bg-white/20" : "bg-[var(--color-mp-success)]"
         )}
       />
       <span className="font-semibold">{type}</span>
@@ -327,8 +327,8 @@ function Field({
           className={cn(
             "font-mono text-[10px] uppercase tracking-wider",
             badgeVariant === "success"
-              ? "text-[--color-mp-success]"
-              : "text-[--color-mp-red] cursor-pointer"
+              ? "text-[var(--color-mp-success)]"
+              : "text-[var(--color-mp-red)] cursor-pointer"
           )}
         >
           ● {badge}
@@ -357,15 +357,15 @@ function WizardStep({
       className={cn(
         "flex items-start gap-3 p-3 rounded-xl border",
         status === "done" && "bg-black/20 border-white/10",
-        status === "active" && "bg-[--color-mp-wine-900] border-white/20",
+        status === "active" && "bg-[var(--color-mp-wine-900)] border-white/20",
         status === "pending" && "bg-black/10 border-white/5 opacity-60"
       )}
     >
       <div
         className={cn(
           "h-7 w-7 rounded-full flex items-center justify-center text-xs font-semibold shrink-0",
-          status === "done" && "bg-[--color-mp-success] text-white",
-          status === "active" && "bg-white text-[--color-mp-red]",
+          status === "done" && "bg-[var(--color-mp-success)] text-white",
+          status === "active" && "bg-white text-[var(--color-mp-red)]",
           status === "pending" && "bg-white/10 text-white/50"
         )}
       >
@@ -392,7 +392,7 @@ function Toggle({ on }: { on?: boolean }) {
     <div
       className={cn(
         "h-6 w-10 rounded-full p-0.5 transition-colors",
-        on ? "bg-[--color-mp-red]" : "bg-white/15"
+        on ? "bg-[var(--color-mp-red)]" : "bg-white/15"
       )}
     >
       <div

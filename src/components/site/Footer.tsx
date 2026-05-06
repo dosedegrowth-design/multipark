@@ -47,16 +47,16 @@ const FOOTER_NAV = [
 
 export function Footer() {
   return (
-    <footer className="bg-[--color-mp-wine-900] text-white mt-32">
+    <footer className="bg-[var(--color-mp-wine-900)] text-white mt-32">
       <Container>
         <div className="py-16 grid grid-cols-2 md:grid-cols-6 gap-8">
           <div className="col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-5">
-              <div className="h-8 w-8 rounded-full bg-[--color-mp-red] flex items-center justify-center">
+              <div className="h-8 w-8 rounded-full bg-[var(--color-mp-red)] flex items-center justify-center">
                 <ArrowRight className="h-4 w-4 text-white" />
               </div>
               <span className="font-semibold text-lg">
-                MultiPar<span className="text-[--color-mp-red]">K</span>
+                MultiPar<span className="text-[var(--color-mp-red)]">K</span>
               </span>
             </Link>
             <p className="text-sm text-white/60 max-w-xs leading-relaxed mb-6">
@@ -91,7 +91,7 @@ export function Footer() {
 
           {FOOTER_NAV.map((col) => (
             <div key={col.title}>
-              <h4 className="font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-[--color-mp-red] mb-4">
+              <h4 className="font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-[var(--color-mp-red)] mb-4">
                 {col.title}
               </h4>
               <ul className="space-y-2.5">
@@ -143,7 +143,7 @@ function SocialLink({
       target="_blank"
       rel="noreferrer"
       aria-label={label}
-      className="h-9 w-9 rounded-full border border-white/15 flex items-center justify-center hover:bg-white hover:text-[--color-mp-wine-900] transition-colors"
+      className="h-9 w-9 rounded-full border border-white/15 flex items-center justify-center hover:bg-white hover:text-[var(--color-mp-wine-900)] transition-colors"
     >
       {children}
     </Link>

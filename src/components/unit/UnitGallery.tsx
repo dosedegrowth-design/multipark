@@ -10,9 +10,9 @@ export function UnitGallery({ count = 12 }: { count?: number }) {
   return (
     <div className="grid grid-cols-3 gap-2 h-[420px]">
       {/* Big */}
-      <div className="col-span-2 row-span-2 relative bg-[--color-mp-ink] rounded-2xl overflow-hidden group cursor-pointer">
+      <div className="col-span-2 row-span-2 relative bg-[var(--color-mp-ink)] rounded-2xl overflow-hidden group cursor-pointer">
         <PhotoTile featured />
-        <div className="absolute bottom-4 left-4 px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-md font-mono text-[10px] tracking-[0.18em] uppercase text-[--color-mp-text]">
+        <div className="absolute bottom-4 left-4 px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-md font-mono text-[10px] tracking-[0.18em] uppercase text-[var(--color-mp-text)]">
           Fachada
         </div>
       </div>
@@ -23,7 +23,7 @@ export function UnitGallery({ count = 12 }: { count?: number }) {
           key={i}
           onClick={() => setActive(i)}
           className={cn(
-            "relative bg-[--color-mp-ink] rounded-xl overflow-hidden cursor-pointer ring-2 ring-transparent hover:ring-[--color-mp-red] transition-all",
+            "relative bg-[var(--color-mp-ink)] rounded-xl overflow-hidden cursor-pointer ring-2 ring-transparent hover:ring-[var(--color-mp-red)] transition-all",
             i === 4 && "flex items-center justify-center"
           )}
         >
@@ -62,7 +62,7 @@ function PhotoTile({ variant = 0, featured = false }: { variant?: number; featur
       {/* fake car silhouette */}
       <svg
         className={cn(
-          "absolute opacity-15 text-[--color-mp-red]",
+          "absolute opacity-15 text-[var(--color-mp-red)]",
           featured
             ? "bottom-8 right-8 h-32 w-32"
             : "bottom-2 right-2 h-12 w-12"

@@ -36,12 +36,12 @@ export default function TagPage() {
                   { label: "10% off recargas", desc: "Cashback na conta" },
                   { label: "Aceita 5 redes", desc: "Sem Parar, ConectCar, Veloe" },
                 ].map((b) => (
-                  <div key={b.label} className="rounded-2xl border border-[--color-mp-line] p-5 bg-white">
-                    <div className="h-9 w-9 rounded-lg bg-[--color-mp-red]/10 flex items-center justify-center mb-3">
-                      <Check className="h-4 w-4 text-[--color-mp-red]" />
+                  <div key={b.label} className="rounded-2xl border border-[var(--color-mp-line)] p-5 bg-white">
+                    <div className="h-9 w-9 rounded-lg bg-mp-red-10 flex items-center justify-center mb-3">
+                      <Check className="h-4 w-4 text-[var(--color-mp-red)]" />
                     </div>
                     <div className="font-semibold mb-1">{b.label}</div>
-                    <div className="text-xs text-[--color-mp-text-soft]">{b.desc}</div>
+                    <div className="text-xs text-[var(--color-mp-text-soft)]">{b.desc}</div>
                   </div>
                 ))}
               </div>
@@ -54,9 +54,9 @@ export default function TagPage() {
                 <h2 className="text-3xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
                   Cole a tag no parabrisa
                   <br />
-                  <span className="text-[--color-mp-text-muted]">e esquece dela.</span>
+                  <span className="text-[var(--color-mp-text-muted)]">e esquece dela.</span>
                 </h2>
-                <p className="mt-5 text-[--color-mp-text-soft] leading-relaxed">
+                <p className="mt-5 text-[var(--color-mp-text-soft)] leading-relaxed">
                   Recarga automática, fatura mensal consolidada e suporte 24h
                   via WhatsApp. Mesmo dispositivo serve para estacionamento e
                   pedágio.
@@ -76,26 +76,26 @@ export default function TagPage() {
         </section>
 
         {/* Como funciona */}
-        <section className="py-20 bg-[--color-mp-cream]">
+        <section className="py-20 bg-[var(--color-mp-cream)]">
           <Container>
             <div className="eyebrow mb-3">Como funciona</div>
             <h2 className="text-3xl md:text-5xl font-semibold tracking-tight leading-[1.05] mb-12">
               3 passos pra ter a sua.
             </h2>
-            <div className="grid md:grid-cols-3 gap-px bg-[--color-mp-line] rounded-2xl overflow-hidden border border-[--color-mp-line]">
+            <div className="grid md:grid-cols-3 gap-px bg-[var(--color-mp-line)] rounded-2xl overflow-hidden border border-[var(--color-mp-line)]">
               {[
                 { n: "01", title: "Solicite online", desc: "Pelo site ou app, em 2 minutos." },
                 { n: "02", title: "Receba em casa", desc: "Entrega grátis em até 5 dias úteis." },
                 { n: "03", title: "Ative no app", desc: "Recarga automática + uso imediato." },
               ].map((s) => (
                 <div key={s.n} className="bg-white p-8 md:p-10">
-                  <span className="font-mono text-[11px] tracking-[0.18em] text-[--color-mp-red]">
+                  <span className="font-mono text-[11px] tracking-[0.18em] text-[var(--color-mp-red)]">
                     {s.n}
                   </span>
                   <h3 className="text-xl md:text-2xl font-semibold mt-4 mb-2">
                     {s.title}
                   </h3>
-                  <p className="text-[--color-mp-text-soft]">{s.desc}</p>
+                  <p className="text-[var(--color-mp-text-soft)]">{s.desc}</p>
                 </div>
               ))}
             </div>

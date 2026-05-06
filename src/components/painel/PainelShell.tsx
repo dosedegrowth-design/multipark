@@ -73,16 +73,16 @@ export function PainelShell({
   const nav = isMatriz ? navMatriz : navOperador;
 
   return (
-    <div className="min-h-screen bg-[--color-mp-ink] text-white">
+    <div className="min-h-screen bg-[var(--color-mp-ink)] text-white">
       {/* Topbar */}
-      <header className="sticky top-0 z-30 bg-[--color-mp-ink] border-b border-white/10 h-14">
+      <header className="sticky top-0 z-30 bg-[var(--color-mp-ink)] border-b border-white/10 h-14">
         <div className="h-full flex items-center px-5 gap-5">
           <Link href="/" className="flex items-center gap-2 shrink-0">
-            <div className="h-7 w-7 rounded-full bg-[--color-mp-red] flex items-center justify-center">
+            <div className="h-7 w-7 rounded-full bg-[var(--color-mp-red)] flex items-center justify-center">
               <ArrowRight className="h-3.5 w-3.5 text-white" />
             </div>
             <span className="font-semibold text-base">
-              MultiPar<span className="text-[--color-mp-red]">K</span>
+              MultiPar<span className="text-[var(--color-mp-red)]">K</span>
             </span>
           </Link>
 
@@ -117,10 +117,10 @@ export function PainelShell({
             </button>
             <button className="h-9 w-9 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center relative">
               <Bell className="h-4 w-4 text-white/70" />
-              <span className="absolute top-2 right-2 h-1.5 w-1.5 bg-[--color-mp-red] rounded-full" />
+              <span className="absolute top-2 right-2 h-1.5 w-1.5 bg-[var(--color-mp-red)] rounded-full" />
             </button>
             <button className="h-9 px-2.5 rounded-lg bg-white/5 hover:bg-white/10 flex items-center gap-2">
-              <div className="h-6 w-6 rounded-full bg-[--color-mp-red] flex items-center justify-center text-xs font-semibold">
+              <div className="h-6 w-6 rounded-full bg-[var(--color-mp-red)] flex items-center justify-center text-xs font-semibold">
                 R
               </div>
               <span className="hidden sm:inline text-sm font-medium">
@@ -165,7 +165,7 @@ export function PainelShell({
                   className={cn(
                     "flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm transition-colors",
                     isActive
-                      ? "bg-[--color-mp-red] text-white"
+                      ? "bg-[var(--color-mp-red)] text-white"
                       : "text-white/65 hover:text-white hover:bg-white/5"
                   )}
                 >
@@ -181,7 +181,7 @@ export function PainelShell({
         </aside>
 
         {/* Content */}
-        <main className="flex-1 min-w-0 bg-[--color-mp-ink] text-white">
+        <main className="flex-1 min-w-0 bg-[var(--color-mp-ink)] text-white">
           {(pageTitle || badge) && (
             <div className="px-6 md:px-10 pt-7 pb-5 border-b border-white/5 flex flex-wrap items-start justify-between gap-3">
               <div>

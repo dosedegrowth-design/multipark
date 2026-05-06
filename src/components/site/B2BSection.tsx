@@ -8,14 +8,14 @@ export function B2BSection() {
       <Container>
         <div className="grid md:grid-cols-2 gap-5 md:gap-6">
           {/* Multicliente */}
-          <div className="relative rounded-[24px] p-8 md:p-12 overflow-hidden bg-gradient-to-br from-[--color-mp-cream] to-white border border-[--color-mp-line] group hover:shadow-[var(--shadow-pop)] transition-shadow">
-            <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[--color-mp-red] mb-3">
+          <div className="relative rounded-[24px] p-8 md:p-12 overflow-hidden bg-gradient-to-br from-[var(--color-mp-cream)] to-white border border-[var(--color-mp-line)] group hover:shadow-[var(--shadow-pop)] transition-shadow">
+            <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-mp-red)] mb-3">
               Programa Multicliente
             </div>
-            <h3 className="text-2xl md:text-4xl font-semibold tracking-tight leading-[1.05] text-[--color-mp-ink] max-w-md">
+            <h3 className="text-2xl md:text-4xl font-semibold tracking-tight leading-[1.05] text-[var(--color-mp-ink)] max-w-md">
               30% off em 150+ estacionamentos.
             </h3>
-            <p className="mt-4 text-[--color-mp-text-soft] max-w-md leading-relaxed">
+            <p className="mt-4 text-[var(--color-mp-text-soft)] max-w-md leading-relaxed">
               Para mensalistas Multipark e parceiros credenciados. Funciona
               automaticamente no checkout.
             </p>
@@ -28,8 +28,8 @@ export function B2BSection() {
           </div>
 
           {/* Empresas */}
-          <div className="relative rounded-[24px] p-8 md:p-12 overflow-hidden bg-[--color-mp-ink] text-white border border-[--color-mp-ink] group hover:shadow-[var(--shadow-pop)] transition-shadow">
-            <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[--color-mp-red] mb-3">
+          <div className="relative rounded-[24px] p-8 md:p-12 overflow-hidden bg-[var(--color-mp-ink)] text-white border border-[var(--color-mp-ink)] group hover:shadow-[var(--shadow-pop)] transition-shadow">
+            <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-mp-red)] mb-3">
               Multiselo · Empresas
             </div>
             <h3 className="text-2xl md:text-4xl font-semibold tracking-tight leading-[1.05] max-w-md">

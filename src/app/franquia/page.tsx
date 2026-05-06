@@ -41,26 +41,26 @@ export default function FranquiaPage() {
                 <h2 className="text-3xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
                   Veja quanto sua
                   <br />
-                  <span className="text-[--color-mp-text-muted]">
+                  <span className="text-[var(--color-mp-text-muted)]">
                     unidade pode faturar.
                   </span>
                 </h2>
-                <p className="mt-5 text-[--color-mp-text-soft] leading-relaxed">
+                <p className="mt-5 text-[var(--color-mp-text-soft)] leading-relaxed">
                   Estimativa baseada no ticket médio nacional MultiPark e
                   ocupação histórica de unidades urbanas. Discovery refina os
                   números pro seu mercado específico.
                 </p>
               </div>
 
-              <div className="rounded-2xl border-2 border-[--color-mp-line] p-7 bg-white">
-                <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-[--color-mp-text-soft] mb-2">
+              <div className="rounded-2xl border-2 border-[var(--color-mp-line)] p-7 bg-white">
+                <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-mp-text-soft)] mb-2">
                   Tamanho da unidade
                 </div>
                 <div className="flex items-baseline gap-2 mb-3">
                   <span className="text-4xl font-semibold tabular-nums">
                     {vagas}
                   </span>
-                  <span className="text-[--color-mp-text-soft]">vagas</span>
+                  <span className="text-[var(--color-mp-text-soft)]">vagas</span>
                 </div>
                 <input
                   type="range"
@@ -71,12 +71,12 @@ export default function FranquiaPage() {
                   onChange={(e) => setVagas(parseInt(e.target.value))}
                   className="w-full mp-range"
                 />
-                <div className="flex justify-between text-xs text-[--color-mp-text-soft] mt-1 mb-6 font-mono">
+                <div className="flex justify-between text-xs text-[var(--color-mp-text-soft)] mt-1 mb-6 font-mono">
                   <span>30</span>
                   <span>400</span>
                 </div>
 
-                <div className="space-y-2 border-t border-[--color-mp-line] pt-5">
+                <div className="space-y-2 border-t border-[var(--color-mp-line)] pt-5">
                   <Row
                     label="Receita estimada / mês"
                     value={`R$ ${receitaMensal.toLocaleString("pt-BR", { maximumFractionDigits: 0 })}`}
@@ -99,15 +99,15 @@ export default function FranquiaPage() {
         </section>
 
         {/* O que está incluso */}
-        <section className="py-20 bg-[--color-mp-cream]">
+        <section className="py-20 bg-[var(--color-mp-cream)]">
           <Container>
             <div className="grid md:grid-cols-2 gap-12 items-start">
               <div>
-                <Award className="h-8 w-8 text-[--color-mp-red] mb-3" />
+                <Award className="h-8 w-8 text-[var(--color-mp-red)] mb-3" />
                 <h2 className="text-3xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
                   O que vem
                   <br />
-                  <span className="text-[--color-mp-text-muted]">no kit franquia.</span>
+                  <span className="text-[var(--color-mp-text-muted)]">no kit franquia.</span>
                 </h2>
               </div>
               <div className="space-y-2">
@@ -123,9 +123,9 @@ export default function FranquiaPage() {
                 ].map((item) => (
                   <div
                     key={item}
-                    className="flex items-start gap-3 p-4 rounded-xl bg-white border border-[--color-mp-line]"
+                    className="flex items-start gap-3 p-4 rounded-xl bg-white border border-[var(--color-mp-line)]"
                   >
-                    <div className="h-5 w-5 rounded-full bg-[--color-mp-red] flex items-center justify-center shrink-0 mt-0.5">
+                    <div className="h-5 w-5 rounded-full bg-[var(--color-mp-red)] flex items-center justify-center shrink-0 mt-0.5">
                       <ArrowRight className="h-3 w-3 text-white" />
                     </div>
                     <span className="text-sm">{item}</span>
@@ -165,11 +165,11 @@ export default function FranquiaPage() {
 function Row({ label, value, highlight }: { label: string; value: string; highlight?: boolean }) {
   return (
     <div className="flex items-center justify-between py-1">
-      <span className="text-sm text-[--color-mp-text-soft]">{label}</span>
+      <span className="text-sm text-[var(--color-mp-text-soft)]">{label}</span>
       <span
         className={`tabular-nums ${
           highlight
-            ? "text-2xl font-semibold text-[--color-mp-red]"
+            ? "text-2xl font-semibold text-[var(--color-mp-red)]"
             : "font-medium"
         }`}
       >

@@ -31,18 +31,18 @@ export default function MulticlientePage() {
                 { stat: "150+", label: "estacionamentos", desc: "Toda a rede MultiPark + parceiros credenciados" },
                 { stat: "0", label: "anuidade", desc: "Cadastro grátis para mensalistas" },
               ].map((s) => (
-                <div key={s.label} className="rounded-2xl border border-[--color-mp-line] p-7 bg-white">
-                  <div className="text-5xl font-semibold tabular-nums tracking-tight text-[--color-mp-red]">
+                <div key={s.label} className="rounded-2xl border border-[var(--color-mp-line)] p-7 bg-white">
+                  <div className="text-5xl font-semibold tabular-nums tracking-tight text-[var(--color-mp-red)]">
                     {s.stat}
                   </div>
                   <div className="font-semibold mt-2">{s.label}</div>
-                  <div className="text-sm text-[--color-mp-text-soft] mt-1">{s.desc}</div>
+                  <div className="text-sm text-[var(--color-mp-text-soft)] mt-1">{s.desc}</div>
                 </div>
               ))}
             </div>
 
-            <div className="mt-12 rounded-3xl bg-[--color-mp-ink] text-white p-8 md:p-14 text-center">
-              <Star className="h-7 w-7 text-[--color-mp-red] mx-auto mb-4" />
+            <div className="mt-12 rounded-3xl bg-[var(--color-mp-ink)] text-white p-8 md:p-14 text-center">
+              <Star className="h-7 w-7 text-[var(--color-mp-red)] mx-auto mb-4" />
               <h2 className="text-3xl md:text-5xl font-semibold tracking-tight leading-[1.05] max-w-2xl mx-auto">
                 Já é mensalista? Seu desconto está esperando.
               </h2>

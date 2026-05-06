@@ -35,22 +35,22 @@ export default function MatrizPage() {
           </div>
         </div>
 
-        <div className="relative h-[300px] md:h-[400px] rounded-xl bg-[--color-mp-wine-900] overflow-hidden">
+        <div className="relative h-[300px] md:h-[400px] rounded-xl bg-[var(--color-mp-wine-900)] overflow-hidden">
           {/* mapa estilizado do Brasil */}
           <BrazilMap />
 
           {/* legend */}
           <div className="absolute bottom-3 left-3 bg-black/40 backdrop-blur-md rounded-lg p-3 text-xs space-y-1.5">
             <div className="flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-[--color-mp-red]" />
+              <span className="h-2 w-2 rounded-full bg-[var(--color-mp-red)]" />
               <span className="text-white/80">Próprias</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-[--color-mp-warning]" />
+              <span className="h-2 w-2 rounded-full bg-[var(--color-mp-warning)]" />
               <span className="text-white/80">Parceiras</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-[--color-mp-success]" />
+              <span className="h-2 w-2 rounded-full bg-[var(--color-mp-success)]" />
               <span className="text-white/80">Onboarding</span>
             </div>
           </div>
@@ -103,7 +103,7 @@ export default function MatrizPage() {
                 <div className="hidden md:block w-32">
                   <div className="h-1.5 rounded-full bg-white/10 overflow-hidden">
                     <div
-                      className="h-full bg-[--color-mp-red]"
+                      className="h-full bg-[var(--color-mp-red)]"
                       style={{ width: `${u.share}%` }}
                     />
                   </div>
@@ -163,9 +163,9 @@ function Pill({
   color: "success" | "red" | "warning";
 }) {
   const colors = {
-    success: "bg-[--color-mp-success]/20 text-[--color-mp-success]",
-    red: "bg-[--color-mp-red]/20 text-[--color-mp-red]",
-    warning: "bg-[--color-mp-warning]/20 text-[--color-mp-warning]",
+    success: "bg-mp-success-20 text-[var(--color-mp-success)]",
+    red: "bg-mp-red-20 text-[var(--color-mp-red)]",
+    warning: "bg-mp-warning-20 text-[var(--color-mp-warning)]",
   };
   return (
     <span className={`px-2.5 py-1 rounded-full ${colors[color]}`}>{children}</span>
@@ -187,7 +187,7 @@ function BigKPI({
         {label}
       </div>
       <div className="text-3xl font-semibold tabular-nums">{value}</div>
-      <div className="mt-1 flex items-center gap-1 text-xs text-[--color-mp-success]">
+      <div className="mt-1 flex items-center gap-1 text-xs text-[var(--color-mp-success)]">
         <TrendingUp className="h-3 w-3" />
         {trend}
       </div>
@@ -207,9 +207,9 @@ function Alert({
   variant: "red" | "warning" | "success";
 }) {
   const variants = {
-    red: "bg-[--color-mp-red]/10 text-[--color-mp-red]",
-    warning: "bg-[--color-mp-warning]/15 text-[--color-mp-warning]",
-    success: "bg-[--color-mp-success]/15 text-[--color-mp-success]",
+    red: "bg-mp-red-10 text-[var(--color-mp-red)]",
+    warning: "bg-mp-warning-15 text-[var(--color-mp-warning)]",
+    success: "bg-mp-success-15 text-[var(--color-mp-success)]",
   };
   return (
     <div className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/[0.04] transition-colors">
@@ -275,10 +275,10 @@ function BrazilMap() {
           <div
             className={`h-2.5 w-2.5 rounded-full animate-pulse-dot ${
               p.type === "red"
-                ? "bg-[--color-mp-red] ring-4 ring-[--color-mp-red]/20"
+                ? "bg-[var(--color-mp-red)] ring-4 ring-[var(--color-mp-red)]/20"
                 : p.type === "warning"
-                ? "bg-[--color-mp-warning] ring-4 ring-[--color-mp-warning]/20"
-                : "bg-[--color-mp-success] ring-4 ring-[--color-mp-success]/20"
+                ? "bg-[var(--color-mp-warning)] ring-4 ring-[var(--color-mp-warning)]/20"
+                : "bg-[var(--color-mp-success)] ring-4 ring-[var(--color-mp-success)]/20"
             }`}
           />
           <div className="absolute top-3.5 left-1/2 -translate-x-1/2 font-mono text-[8px] text-white/65 whitespace-nowrap pointer-events-none">

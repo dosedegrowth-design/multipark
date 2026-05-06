@@ -14,7 +14,7 @@ export function UnitMapMini({
   const wazeUrl = `https://waze.com/ul?ll=${geo.lat},${geo.lng}&navigate=yes`;
 
   return (
-    <div className="relative h-[280px] md:h-[320px] rounded-2xl overflow-hidden border border-[--color-mp-line] bg-[--color-mp-cream]">
+    <div className="relative h-[280px] md:h-[320px] rounded-2xl overflow-hidden border border-[var(--color-mp-line)] bg-[var(--color-mp-cream)]">
       {/* Fake map */}
       <div className="absolute inset-0">
         <div
@@ -39,10 +39,10 @@ export function UnitMapMini({
 
         {/* Pin */}
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-          <div className="bg-[--color-mp-red] text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow-lg whitespace-nowrap mb-1">
+          <div className="bg-[var(--color-mp-red)] text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow-lg whitespace-nowrap mb-1">
             Multipark Cumbica
           </div>
-          <div className="h-3 w-3 bg-[--color-mp-red] rounded-full mx-auto ring-8 ring-[--color-mp-red]/15" />
+          <div className="h-3 w-3 bg-[var(--color-mp-red)] rounded-full mx-auto ring-8 ring-[var(--color-mp-red)]/15" />
         </div>
       </div>
 
@@ -53,7 +53,7 @@ export function UnitMapMini({
             <span className="font-semibold">
               {distance.km} km · {distance.minutes} min
             </span>{" "}
-            <span className="text-[--color-mp-text-soft]">até {distance.to}</span>
+            <span className="text-[var(--color-mp-text-soft)]">até {distance.to}</span>
           </div>
         )}
         <div className="flex gap-2">

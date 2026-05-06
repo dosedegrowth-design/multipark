@@ -28,7 +28,7 @@ export function HeroHome() {
       <Container>
         <div className="grid lg:grid-cols-[1.15fr_1fr] gap-12 lg:gap-16 items-end relative">
           <div className="pt-8 md:pt-12">
-            <div className="eyebrow text-[--color-mp-red] mb-5 flex items-center gap-2">
+            <div className="eyebrow text-[var(--color-mp-red)] mb-5 flex items-center gap-2">
               <Sparkles className="h-3.5 w-3.5" />
               50 anos cuidando do seu carro
             </div>
@@ -36,7 +36,7 @@ export function HeroHome() {
               Reserve sua
               <br />
               vaga em{" "}
-              <span className="text-[--color-mp-red] italic font-semibold">
+              <span className="text-[var(--color-mp-red)] italic font-semibold">
                 2 minutos.
               </span>
             </h1>
@@ -81,7 +81,7 @@ export function HeroHome() {
 function Stat({ children, last }: { children: React.ReactNode; last?: boolean }) {
   return (
     <span className="flex items-center gap-3">
-      <span className="text-[--color-mp-red]">✦</span>
+      <span className="text-[var(--color-mp-red)]">✦</span>
       <span>{children}</span>
       {!last && <span className="ml-1 text-white/20">·</span>}
     </span>
@@ -99,15 +99,15 @@ function AirportCard({
       href={`/aeroportos/${airport.name.toLowerCase()}`}
       className={`relative rounded-[14px] p-4 md:p-5 h-[140px] md:h-[160px] flex flex-col justify-between border transition-transform hover:-translate-y-0.5 ${
         dark
-          ? "bg-[--color-mp-ink] border-white/5"
-          : "bg-white text-[--color-mp-ink] border-transparent"
+          ? "bg-[var(--color-mp-ink)] border-white/5"
+          : "bg-white text-[var(--color-mp-ink)] border-transparent"
       }`}
     >
       <span
         className={`label-tag inline-flex items-center px-2 py-0.5 rounded ${
           dark
             ? "bg-white/10 text-white"
-            : "bg-[--color-mp-cream] text-[--color-mp-text-soft]"
+            : "bg-[var(--color-mp-cream)] text-[var(--color-mp-text-soft)]"
         } w-fit`}
       >
         {airport.code}
@@ -119,7 +119,7 @@ function AirportCard({
         </div>
       </div>
 
-      <div className="absolute top-4 right-4 bg-[--color-mp-red] text-white text-[10px] font-mono uppercase tracking-wider px-2 py-1 rounded-md">
+      <div className="absolute top-4 right-4 bg-[var(--color-mp-red)] text-white text-[10px] font-mono uppercase tracking-wider px-2 py-1 rounded-md">
         a partir R$ {airport.priceFrom}
       </div>
     </Link>

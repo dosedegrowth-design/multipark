@@ -46,15 +46,15 @@ export default function SobrePage() {
 
               <div className="space-y-8">
                 {TIMELINE.map((t) => (
-                  <div key={t.year} className="grid md:grid-cols-[140px_1fr] gap-4 md:gap-8 pb-8 border-b border-[--color-mp-line] last:border-b-0">
-                    <div className="font-mono text-3xl md:text-4xl font-semibold text-[--color-mp-red] tabular-nums">
+                  <div key={t.year} className="grid md:grid-cols-[140px_1fr] gap-4 md:gap-8 pb-8 border-b border-[var(--color-mp-line)] last:border-b-0">
+                    <div className="font-mono text-3xl md:text-4xl font-semibold text-[var(--color-mp-red)] tabular-nums">
                       {t.year}
                     </div>
                     <div>
                       <h3 className="text-xl md:text-2xl font-semibold mb-2">
                         {t.title}
                       </h3>
-                      <p className="text-[--color-mp-text-soft] leading-relaxed">
+                      <p className="text-[var(--color-mp-text-soft)] leading-relaxed">
                         {t.desc}
                       </p>
                     </div>
@@ -73,11 +73,11 @@ export default function SobrePage() {
 
 function Stat({ n, label }: { n: string; label: string }) {
   return (
-    <div className="rounded-2xl border border-[--color-mp-line] p-7 bg-white">
-      <div className="text-6xl font-semibold tabular-nums text-[--color-mp-red] tracking-tight">
+    <div className="rounded-2xl border border-[var(--color-mp-line)] p-7 bg-white">
+      <div className="text-6xl font-semibold tabular-nums text-[var(--color-mp-red)] tracking-tight">
         {n}
       </div>
-      <div className="mt-2 text-[--color-mp-text-soft]">{label}</div>
+      <div className="mt-2 text-[var(--color-mp-text-soft)]">{label}</div>
     </div>
   );
 }

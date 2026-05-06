@@ -66,7 +66,7 @@ export default function DashboardPage() {
                 key={r.plate}
                 className="flex items-center gap-3 p-2.5 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] transition-colors"
               >
-                <div className="h-9 w-9 rounded-lg bg-[--color-mp-red]/15 flex items-center justify-center text-[--color-mp-red] shrink-0">
+                <div className="h-9 w-9 rounded-lg bg-mp-red-15 flex items-center justify-center text-[var(--color-mp-red)] shrink-0">
                   <Clock className="h-4 w-4" />
                 </div>
                 <div className="flex-1 min-w-0">
@@ -80,9 +80,9 @@ export default function DashboardPage() {
                   </div>
                 </div>
                 {r.status === "confirmada" ? (
-                  <CheckCircle2 className="h-4 w-4 text-[--color-mp-success]" />
+                  <CheckCircle2 className="h-4 w-4 text-[var(--color-mp-success)]" />
                 ) : (
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-[--color-mp-warning]">
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-[var(--color-mp-warning)]">
                     pendente
                   </span>
                 )}
@@ -135,7 +135,7 @@ function KPI({
         <Icon className="h-4 w-4 text-white/30" />
       </div>
       <div className="text-2xl font-semibold tabular-nums">{value}</div>
-      <div className="mt-1 flex items-center gap-1 text-xs text-[--color-mp-success]">
+      <div className="mt-1 flex items-center gap-1 text-xs text-[var(--color-mp-success)]">
         <ArrowUpRight className="h-3 w-3" />
         {trend} vs ontem
       </div>
@@ -158,7 +158,7 @@ function ActionCard({
     <div
       className={`rounded-2xl p-5 border ${
         highlight
-          ? "bg-[--color-mp-red] border-[--color-mp-red] text-white"
+          ? "bg-[var(--color-mp-red)] border-[var(--color-mp-red)] text-white"
           : "bg-white/[0.03] border-white/10 text-white"
       }`}
     >
@@ -168,7 +168,7 @@ function ActionCard({
       </p>
       <button
         className={`mt-4 text-sm font-medium flex items-center gap-1 ${
-          highlight ? "" : "text-[--color-mp-red]"
+          highlight ? "" : "text-[var(--color-mp-red)]"
         } hover:gap-2 transition-all`}
       >
         <Plus className="h-3.5 w-3.5" />
@@ -186,7 +186,7 @@ function FakeChart() {
       {points.map((p, i) => (
         <div key={i} className="flex-1 flex flex-col items-center gap-1.5">
           <div
-            className="w-full rounded-t-sm bg-gradient-to-t from-[--color-mp-red]/80 to-[--color-mp-red]/30"
+            className="w-full rounded-t-sm bg-gradient-to-t from-[var(--color-mp-red)]/80 to-[var(--color-mp-red)]/30"
             style={{ height: `${(p / max) * 100}%` }}
           />
           {i % 3 === 0 && (

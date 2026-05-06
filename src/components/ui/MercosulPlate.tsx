@@ -14,7 +14,7 @@ export function MercosulPlate({
   return (
     <div
       className={cn(
-        "relative inline-flex flex-col bg-white border-2 border-[--color-mp-ink] rounded-[8px] overflow-hidden shadow-sm",
+        "relative inline-flex flex-col bg-white border-2 border-[var(--color-mp-ink)] rounded-[8px] overflow-hidden shadow-sm",
         size === "sm" && "w-[140px]",
         size === "md" && "w-[200px]",
         size === "lg" && "w-[280px]",
@@ -31,7 +31,7 @@ export function MercosulPlate({
       <div className="bg-white px-3 py-2 flex items-center justify-center">
         <span
           className={cn(
-            "plate-mercosul text-[--color-mp-ink]",
+            "plate-mercosul text-[var(--color-mp-ink)]",
             size === "sm" && "text-xl",
             size === "md" && "text-3xl",
             size === "lg" && "text-4xl"

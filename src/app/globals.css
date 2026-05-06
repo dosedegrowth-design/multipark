@@ -43,18 +43,11 @@
   /* === Shadows === */
   --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
   --shadow-pop: 0 10px 30px rgba(0, 0, 0, 0.08), 0 4px 10px rgba(0, 0, 0, 0.04);
-
-  /* === Container === */
-  --container-7xl: 1440px;
 }
 
 :root {
   --background: var(--color-mp-paper);
   --foreground: var(--color-mp-text);
-}
-
-* {
-  border-color: var(--color-mp-line);
 }
 
 html {
@@ -68,6 +61,74 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   font-feature-settings: "ss01", "cv11";
+}
+
+/* =================================================================
+   UTILITY CLASSES — backgrounds, text, borders com alpha confiáveis
+   (resolve limitação do Tailwind v4 com /opacity em var())
+================================================================= */
+@layer utilities {
+  /* Solid backgrounds */
+  .bg-mp-red { background-color: var(--color-mp-red); }
+  .bg-mp-red-hover { background-color: var(--color-mp-red-hover); }
+  .bg-mp-red-soft { background-color: var(--color-mp-red-soft); }
+  .bg-mp-wine-900 { background-color: var(--color-mp-wine-900); }
+  .bg-mp-wine-800 { background-color: var(--color-mp-wine-800); }
+  .bg-mp-wine-700 { background-color: var(--color-mp-wine-700); }
+  .bg-mp-cream { background-color: var(--color-mp-cream); }
+  .bg-mp-paper { background-color: var(--color-mp-paper); }
+  .bg-mp-ink { background-color: var(--color-mp-ink); }
+  .bg-mp-ink-soft { background-color: var(--color-mp-ink-soft); }
+  .bg-mp-success { background-color: var(--color-mp-success); }
+  .bg-mp-success-soft { background-color: var(--color-mp-success-soft); }
+  .bg-mp-warning { background-color: var(--color-mp-warning); }
+  .bg-mp-warning-soft { background-color: var(--color-mp-warning-soft); }
+  .bg-mp-line { background-color: var(--color-mp-line); }
+
+  /* Bg with alpha (using fixed values that work) */
+  .bg-mp-paper-85 { background-color: rgba(250, 250, 247, 0.85); }
+  .bg-mp-paper-95 { background-color: rgba(250, 250, 247, 0.95); }
+  .bg-mp-wine-85 { background-color: rgba(26, 10, 15, 0.85); }
+  .bg-mp-wine-95 { background-color: rgba(26, 10, 15, 0.95); }
+  .bg-mp-ink-85 { background-color: rgba(10, 10, 10, 0.85); }
+  .bg-mp-red-10 { background-color: rgba(225, 29, 46, 0.1); }
+  .bg-mp-red-15 { background-color: rgba(225, 29, 46, 0.15); }
+  .bg-mp-red-20 { background-color: rgba(225, 29, 46, 0.2); }
+  .bg-mp-success-15 { background-color: rgba(16, 185, 129, 0.15); }
+  .bg-mp-success-20 { background-color: rgba(16, 185, 129, 0.2); }
+  .bg-mp-warning-15 { background-color: rgba(245, 158, 11, 0.15); }
+  .bg-mp-warning-20 { background-color: rgba(245, 158, 11, 0.2); }
+  .bg-mp-cream-50 { background-color: rgba(244, 241, 237, 0.5); }
+  .bg-mp-cream-60 { background-color: rgba(244, 241, 237, 0.6); }
+
+  /* Text */
+  .text-mp-red { color: var(--color-mp-red); }
+  .text-mp-red-hover { color: var(--color-mp-red-hover); }
+  .text-mp-text { color: var(--color-mp-text); }
+  .text-mp-text-soft { color: var(--color-mp-text-soft); }
+  .text-mp-text-muted { color: var(--color-mp-text-muted); }
+  .text-mp-success { color: var(--color-mp-success); }
+  .text-mp-warning { color: var(--color-mp-warning); }
+  .text-mp-ink { color: var(--color-mp-ink); }
+  .text-mp-cream { color: var(--color-mp-cream); }
+
+  /* Borders */
+  .border-mp-line { border-color: var(--color-mp-line); }
+  .border-mp-red { border-color: var(--color-mp-red); }
+  .border-mp-ink { border-color: var(--color-mp-ink); }
+  .border-mp-text { border-color: var(--color-mp-text); }
+  .border-mp-red-30 { border-color: rgba(225, 29, 46, 0.3); }
+  .border-mp-red-50 { border-color: rgba(225, 29, 46, 0.5); }
+
+  /* Fill */
+  .fill-mp-warning { fill: var(--color-mp-warning); }
+  .fill-mp-red { fill: var(--color-mp-red); }
+
+  /* Divide */
+  .divide-mp-line > :not(:last-child) { border-color: var(--color-mp-line); }
+
+  /* Ring */
+  .focus\:border-mp-red:focus { border-color: var(--color-mp-red); }
 }
 
 /* === Typography utilities === */

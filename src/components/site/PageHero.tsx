@@ -19,29 +19,29 @@ export function PageHero({
       className={`py-20 md:py-28 border-b ${
         isDark
           ? "bg-hero-dark text-white border-white/10"
-          : "bg-[--color-mp-paper] border-[--color-mp-line]"
+          : "bg-[var(--color-mp-paper)] border-[var(--color-mp-line)]"
       }`}
     >
       <Container>
-        <div className={`eyebrow mb-4 ${isDark ? "text-[--color-mp-red]" : ""}`}>
+        <div className={`eyebrow mb-4 ${isDark ? "text-[var(--color-mp-red)]" : ""}`}>
           {eyebrow}
         </div>
         <h1
           className={`text-4xl md:text-7xl font-semibold tracking-tight leading-[1] max-w-4xl ${
-            isDark ? "text-white" : "text-[--color-mp-ink]"
+            isDark ? "text-white" : "text-[var(--color-mp-ink)]"
           }`}
         >
           {title}
           {highlight && (
             <>
               <br />
-              <span className="text-[--color-mp-red]">{highlight}</span>
+              <span className="text-[var(--color-mp-red)]">{highlight}</span>
             </>
           )}
         </h1>
         <p
           className={`mt-6 text-lg md:text-xl max-w-2xl leading-relaxed ${
-            isDark ? "text-white/70" : "text-[--color-mp-text-soft]"
+            isDark ? "text-white/70" : "text-[var(--color-mp-text-soft)]"
           }`}
         >
           {subtitle}

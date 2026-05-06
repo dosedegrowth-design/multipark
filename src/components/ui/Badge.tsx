@@ -6,13 +6,13 @@ const badgeVariants = cva(
   {
     variants: {
       variant: {
-        red: "bg-[--color-mp-red] text-white",
-        redSoft: "bg-[--color-mp-red-soft] text-[--color-mp-red]",
-        dark: "bg-[--color-mp-ink] text-white",
-        outline: "border border-[--color-mp-line] text-[--color-mp-text]",
-        success: "bg-[--color-mp-success-soft] text-[--color-mp-success]",
-        warning: "bg-[--color-mp-warning-soft] text-[--color-mp-warning]",
-        ghost: "bg-[--color-mp-cream] text-[--color-mp-text-soft]",
+        red: "bg-[var(--color-mp-red)] text-white",
+        redSoft: "bg-[var(--color-mp-red-soft)] text-[var(--color-mp-red)]",
+        dark: "bg-[var(--color-mp-ink)] text-white",
+        outline: "border border-[var(--color-mp-line)] text-[var(--color-mp-text)]",
+        success: "bg-[var(--color-mp-success-soft)] text-[var(--color-mp-success)]",
+        warning: "bg-[var(--color-mp-warning-soft)] text-[var(--color-mp-warning)]",
+        ghost: "bg-[var(--color-mp-cream)] text-[var(--color-mp-text-soft)]",
       },
       size: {
         sm: "text-[10px] px-2 py-0.5",
@@ -40,7 +40,7 @@ export function Badge({
         <span
           className={cn(
             "h-1.5 w-1.5 rounded-full",
-            variant === "success" ? "bg-[--color-mp-success] animate-pulse-dot" : "bg-current"
+            variant === "success" ? "bg-[var(--color-mp-success)] animate-pulse-dot" : "bg-current"
           )}
         />
       )}

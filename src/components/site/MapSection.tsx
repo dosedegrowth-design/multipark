@@ -31,20 +31,20 @@ export function MapSection() {
   }).slice(0, 6);
 
   return (
-    <section className="py-20 md:py-24 bg-[--color-mp-cream]">
+    <section className="py-20 md:py-24 bg-[var(--color-mp-cream)]">
       <Container>
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
           <div>
             <div className="eyebrow mb-3">+200 unidades · todo o Brasil</div>
-            <h2 className="text-3xl md:text-5xl font-semibold tracking-tight leading-[1.05] text-[--color-mp-ink]">
+            <h2 className="text-3xl md:text-5xl font-semibold tracking-tight leading-[1.05] text-[var(--color-mp-ink)]">
               Encontre a unidade
               <br />
-              <span className="text-[--color-mp-text-muted]">mais próxima.</span>
+              <span className="text-[var(--color-mp-text-muted)]">mais próxima.</span>
             </h2>
           </div>
           <Link
             href="/unidades"
-            className="text-sm font-medium text-[--color-mp-red] hover:underline underline-offset-4"
+            className="text-sm font-medium text-[var(--color-mp-red)] hover:underline underline-offset-4"
           >
             Ver todas as unidades →
           </Link>
@@ -59,8 +59,8 @@ export function MapSection() {
               className={cn(
                 "px-4 py-2 text-sm font-medium rounded-full whitespace-nowrap border transition-colors shrink-0",
                 active === f.id
-                  ? "bg-[--color-mp-ink] text-white border-[--color-mp-ink]"
-                  : "bg-white text-[--color-mp-text] border-[--color-mp-line] hover:border-[--color-mp-text]"
+                  ? "bg-[var(--color-mp-ink)] text-white border-[var(--color-mp-ink)]"
+                  : "bg-white text-[var(--color-mp-text)] border-[var(--color-mp-line)] hover:border-[var(--color-mp-text)]"
               )}
             >
               {f.label}
@@ -70,7 +70,7 @@ export function MapSection() {
 
         <div className="grid lg:grid-cols-[1.2fr_1fr] gap-6">
           {/* Map */}
-          <div className="relative aspect-square lg:aspect-auto lg:min-h-[600px] rounded-2xl overflow-hidden bg-white border border-[--color-mp-line]">
+          <div className="relative aspect-square lg:aspect-auto lg:min-h-[600px] rounded-2xl overflow-hidden bg-white border border-[var(--color-mp-line)]">
             <FakeMap units={filtered} />
           </div>
 
@@ -80,25 +80,25 @@ export function MapSection() {
               <Link
                 key={u.id}
                 href={`/unidades/${u.slug}`}
-                className="block bg-white border border-[--color-mp-line] rounded-2xl p-4 hover:border-[--color-mp-text] hover:shadow-[var(--shadow-card)] transition-all"
+                className="block bg-white border border-[var(--color-mp-line)] rounded-2xl p-4 hover:border-[var(--color-mp-text)] hover:shadow-[var(--shadow-card)] transition-all"
               >
                 <div className="flex gap-4">
-                  <div className="h-20 w-20 shrink-0 rounded-xl bg-[--color-mp-ink] relative overflow-hidden">
+                  <div className="h-20 w-20 shrink-0 rounded-xl bg-[var(--color-mp-ink)] relative overflow-hidden">
                     {/* placeholder cover */}
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(225,29,46,0.4),transparent_60%)]" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-start justify-between gap-2 mb-1">
                       <div className="font-semibold truncate">{u.name}</div>
-                      <div className="text-base font-semibold text-[--color-mp-red] tabular-nums shrink-0">
+                      <div className="text-base font-semibold text-[var(--color-mp-red)] tabular-nums shrink-0">
                         R$ {u.prices.avulso.promo}
                       </div>
                     </div>
-                    <div className="flex items-center gap-2 text-xs text-[--color-mp-text-soft] mb-2">
+                    <div className="flex items-center gap-2 text-xs text-[var(--color-mp-text-soft)] mb-2">
                       <MapPin className="h-3 w-3" />
                       {u.distance ? `${u.distance.km} km · ${u.distance.minutes} min ${u.distance.to}` : `${u.city}, ${u.state}`}
                       <span className="mx-1">·</span>
-                      <Star className="h-3 w-3 fill-[--color-mp-warning] text-[--color-mp-warning]" />
+                      <Star className="h-3 w-3 fill-[var(--color-mp-warning)] text-[var(--color-mp-warning)]" />
                       <span>{u.rating}</span>
                     </div>
                     <div className="flex flex-wrap gap-1">
@@ -121,7 +121,7 @@ export function MapSection() {
 
 function FakeMap({ units }: { units: typeof UNITS }) {
   return (
-    <div className="absolute inset-0 bg-[--color-mp-cream]">
+    <div className="absolute inset-0 bg-[var(--color-mp-cream)]">
       {/* grid pattern background */}
       <div
         className="absolute inset-0 opacity-50"
@@ -158,16 +158,16 @@ function FakeMap({ units }: { units: typeof UNITS }) {
             className="absolute -translate-x-1/2 -translate-y-1/2"
             style={pos}
           >
-            <div className="bg-[--color-mp-red] text-white text-xs font-semibold px-2.5 py-1 rounded-full shadow-lg whitespace-nowrap">
+            <div className="bg-[var(--color-mp-red)] text-white text-xs font-semibold px-2.5 py-1 rounded-full shadow-lg whitespace-nowrap">
               R$ {u.prices.avulso.promo}
             </div>
-            <div className="h-2 w-2 bg-[--color-mp-red] rounded-full mx-auto mt-0.5 ring-4 ring-[--color-mp-red]/20" />
+            <div className="h-2 w-2 bg-[var(--color-mp-red)] rounded-full mx-auto mt-0.5 ring-4 ring-[var(--color-mp-red)]/20" />
           </div>
         );
       })}
 
       {/* placeholder caption */}
-      <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-2 rounded-lg shadow-sm font-mono text-[10px] uppercase tracking-wider text-[--color-mp-text-soft]">
+      <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-2 rounded-lg shadow-sm font-mono text-[10px] uppercase tracking-wider text-[var(--color-mp-text-soft)]">
         Mapa interativo · Mapbox
       </div>
     </div>

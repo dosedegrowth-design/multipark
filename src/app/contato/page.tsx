@@ -30,25 +30,25 @@ export default function ContatoPage() {
                 <Channel icon={MapPin} title="Sede administrativa" value="Av. Paulista, 1374 — São Paulo/SP" cta="Ver no mapa" />
               </div>
 
-              <div className="rounded-3xl border border-[--color-mp-line] bg-white p-7">
-                <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-[--color-mp-text-soft] mb-2">
+              <div className="rounded-3xl border border-[var(--color-mp-line)] bg-white p-7">
+                <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-mp-text-soft)] mb-2">
                   Formulário
                 </div>
                 <h2 className="text-2xl font-semibold mb-5">Mande uma mensagem</h2>
                 <div className="space-y-3">
-                  <input placeholder="Nome" className="w-full px-4 py-3 rounded-xl border border-[--color-mp-line] focus:outline-none focus:border-[--color-mp-red]" />
+                  <input placeholder="Nome" className="w-full px-4 py-3 rounded-xl border border-[var(--color-mp-line)] focus:outline-none focus:border-[var(--color-mp-red)]" />
                   <div className="grid grid-cols-2 gap-3">
-                    <input placeholder="Email" className="px-4 py-3 rounded-xl border border-[--color-mp-line] focus:outline-none focus:border-[--color-mp-red]" />
-                    <input placeholder="WhatsApp" className="px-4 py-3 rounded-xl border border-[--color-mp-line] focus:outline-none focus:border-[--color-mp-red]" />
+                    <input placeholder="Email" className="px-4 py-3 rounded-xl border border-[var(--color-mp-line)] focus:outline-none focus:border-[var(--color-mp-red)]" />
+                    <input placeholder="WhatsApp" className="px-4 py-3 rounded-xl border border-[var(--color-mp-line)] focus:outline-none focus:border-[var(--color-mp-red)]" />
                   </div>
-                  <select className="w-full px-4 py-3 rounded-xl border border-[--color-mp-line] focus:outline-none focus:border-[--color-mp-red] bg-white">
+                  <select className="w-full px-4 py-3 rounded-xl border border-[var(--color-mp-line)] focus:outline-none focus:border-[var(--color-mp-red)] bg-white">
                     <option>Sobre uma reserva existente</option>
                     <option>Mensalista</option>
                     <option>Empresas (B2B)</option>
                     <option>Franquia</option>
                     <option>Outro</option>
                   </select>
-                  <textarea rows={4} placeholder="Como podemos ajudar?" className="w-full px-4 py-3 rounded-xl border border-[--color-mp-line] focus:outline-none focus:border-[--color-mp-red] resize-none" />
+                  <textarea rows={4} placeholder="Como podemos ajudar?" className="w-full px-4 py-3 rounded-xl border border-[var(--color-mp-line)] focus:outline-none focus:border-[var(--color-mp-red)] resize-none" />
                   <Button size="lg" className="w-full">Enviar mensagem</Button>
                 </div>
               </div>
@@ -76,15 +76,15 @@ function Channel({
   highlight?: boolean;
 }) {
   return (
-    <div className={`rounded-2xl border p-5 flex items-center gap-4 transition-all ${highlight ? "bg-[--color-mp-red] border-[--color-mp-red] text-white" : "bg-white border-[--color-mp-line] hover:border-[--color-mp-text]"}`}>
-      <div className={`h-12 w-12 rounded-xl flex items-center justify-center shrink-0 ${highlight ? "bg-white/15" : "bg-[--color-mp-cream]"}`}>
-        <Icon className={`h-5 w-5 ${highlight ? "text-white" : "text-[--color-mp-text-soft]"}`} />
+    <div className={`rounded-2xl border p-5 flex items-center gap-4 transition-all ${highlight ? "bg-[var(--color-mp-red)] border-[var(--color-mp-red)] text-white" : "bg-white border-[var(--color-mp-line)] hover:border-[var(--color-mp-text)]"}`}>
+      <div className={`h-12 w-12 rounded-xl flex items-center justify-center shrink-0 ${highlight ? "bg-white/15" : "bg-[var(--color-mp-cream)]"}`}>
+        <Icon className={`h-5 w-5 ${highlight ? "text-white" : "text-[var(--color-mp-text-soft)]"}`} />
       </div>
       <div className="flex-1 min-w-0">
-        <div className={`font-mono text-[10px] uppercase tracking-[0.15em] ${highlight ? "text-white/70" : "text-[--color-mp-text-soft]"}`}>{title}</div>
+        <div className={`font-mono text-[10px] uppercase tracking-[0.15em] ${highlight ? "text-white/70" : "text-[var(--color-mp-text-soft)]"}`}>{title}</div>
         <div className="font-semibold mt-0.5 truncate">{value}</div>
       </div>
-      <button className={`text-sm font-medium shrink-0 ${highlight ? "text-white" : "text-[--color-mp-red]"}`}>{cta} →</button>
+      <button className={`text-sm font-medium shrink-0 ${highlight ? "text-white" : "text-[var(--color-mp-red)]"}`}>{cta} →</button>
     </div>
   );
 }

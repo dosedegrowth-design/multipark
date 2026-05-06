@@ -39,16 +39,16 @@ export default function AeroportosPage() {
                 <Link
                   key={a.code}
                   href={`#${a.code}`}
-                  className="rounded-2xl border border-[--color-mp-line] p-5 hover:border-[--color-mp-text] transition-colors group"
+                  className="rounded-2xl border border-[var(--color-mp-line)] p-5 hover:border-[var(--color-mp-text)] transition-colors group"
                 >
                   <Badge variant="dark" className="mb-3">
                     {a.code}
                   </Badge>
                   <div className="text-2xl font-semibold mb-1">{a.name}</div>
-                  <div className="text-sm text-[--color-mp-text-soft] mb-4">
+                  <div className="text-sm text-[var(--color-mp-text-soft)] mb-4">
                     {a.desc}
                   </div>
-                  <div className="text-sm font-medium text-[--color-mp-red] flex items-center gap-1 group-hover:gap-2 transition-all">
+                  <div className="text-sm font-medium text-[var(--color-mp-red)] flex items-center gap-1 group-hover:gap-2 transition-all">
                     Ver unidades
                     <ArrowRight className="h-3.5 w-3.5" />
                   </div>
@@ -64,14 +64,14 @@ export default function AeroportosPage() {
                 <div key={a.code} id={a.code} className="mb-16 scroll-mt-24">
                   <div className="flex items-end justify-between mb-6">
                     <div>
-                      <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[--color-mp-red] mb-1">
+                      <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-mp-red)] mb-1">
                         {a.code}
                       </div>
                       <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
                         Aeroporto {a.name}
                       </h2>
                     </div>
-                    <span className="text-sm text-[--color-mp-text-soft] font-mono uppercase tracking-wider">
+                    <span className="text-sm text-[var(--color-mp-text-soft)] font-mono uppercase tracking-wider">
                       {units.length} unidades
                     </span>
                   </div>
@@ -81,9 +81,9 @@ export default function AeroportosPage() {
                       <Link
                         key={u.id}
                         href={`/unidades/${u.slug}`}
-                        className="block rounded-2xl border border-[--color-mp-line] bg-white p-5 hover:border-[--color-mp-text] hover:shadow-[var(--shadow-card)] transition-all"
+                        className="block rounded-2xl border border-[var(--color-mp-line)] bg-white p-5 hover:border-[var(--color-mp-text)] hover:shadow-[var(--shadow-card)] transition-all"
                       >
-                        <div className="aspect-[5/3] rounded-xl bg-[--color-mp-ink] mb-4 relative overflow-hidden">
+                        <div className="aspect-[5/3] rounded-xl bg-[var(--color-mp-ink)] mb-4 relative overflow-hidden">
                           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(225,29,46,0.4),transparent_60%)]" />
                           <div className="absolute top-3 left-3">
                             <Badge variant="dark" size="sm">
@@ -93,15 +93,15 @@ export default function AeroportosPage() {
                         </div>
                         <div className="flex items-start justify-between gap-2 mb-1">
                           <span className="font-semibold truncate">{u.name}</span>
-                          <span className="text-base font-semibold text-[--color-mp-red] tabular-nums shrink-0">
+                          <span className="text-base font-semibold text-[var(--color-mp-red)] tabular-nums shrink-0">
                             R$ {u.prices.avulso.promo}
                           </span>
                         </div>
-                        <div className="flex items-center gap-2 text-xs text-[--color-mp-text-soft] mb-3">
+                        <div className="flex items-center gap-2 text-xs text-[var(--color-mp-text-soft)] mb-3">
                           <MapPin className="h-3 w-3" />
                           <span className="truncate">{u.address.split("—")[0]}</span>
                           <span>·</span>
-                          <Star className="h-3 w-3 fill-[--color-mp-warning] text-[--color-mp-warning]" />
+                          <Star className="h-3 w-3 fill-[var(--color-mp-warning)] text-[var(--color-mp-warning)]" />
                           {u.rating}
                         </div>
                         <div className="flex flex-wrap gap-1">

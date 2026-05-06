@@ -25,23 +25,23 @@ export function Header({ variant = "light" }: { variant?: "light" | "dark" }) {
       className={cn(
         "sticky top-0 z-40 backdrop-blur-md border-b",
         isDark
-          ? "bg-[--color-mp-wine-900]/85 border-white/10"
-          : "bg-[--color-mp-paper]/85 border-[--color-mp-line]"
+          ? "bg-mp-wine-85 border-white/10"
+          : "bg-mp-paper-85 border-[var(--color-mp-line)]"
       )}
     >
       <Container>
         <div className="flex items-center h-16 md:h-[72px] gap-6">
           <Link href="/" className="flex items-center gap-2 shrink-0 group">
-            <div className="relative h-8 w-8 rounded-full bg-[--color-mp-red] flex items-center justify-center transition-transform group-hover:scale-105">
+            <div className="relative h-8 w-8 rounded-full bg-[var(--color-mp-red)] flex items-center justify-center transition-transform group-hover:scale-105">
               <ArrowRight className="h-4 w-4 text-white" />
             </div>
             <span
               className={cn(
                 "font-semibold text-lg tracking-tight",
-                isDark ? "text-white" : "text-[--color-mp-ink]"
+                isDark ? "text-white" : "text-[var(--color-mp-ink)]"
               )}
             >
-              MultiPar<span className="text-[--color-mp-red]">K</span>
+              MultiPar<span className="text-[var(--color-mp-red)]">K</span>
             </span>
           </Link>
 
@@ -54,7 +54,7 @@ export function Header({ variant = "light" }: { variant?: "light" | "dark" }) {
                   "text-sm font-medium transition-colors",
                   isDark
                     ? "text-white/75 hover:text-white"
-                    : "text-[--color-mp-text-soft] hover:text-[--color-mp-text]"
+                    : "text-[var(--color-mp-text-soft)] hover:text-[var(--color-mp-text)]"
                 )}
               >
                 {item.label}
@@ -80,7 +80,7 @@ export function Header({ variant = "light" }: { variant?: "light" | "dark" }) {
             <button
               className={cn(
                 "md:hidden p-2 -mr-2 rounded-md",
-                isDark ? "text-white" : "text-[--color-mp-ink]"
+                isDark ? "text-white" : "text-[var(--color-mp-ink)]"
               )}
               onClick={() => setOpen(!open)}
               aria-label="Menu"
@@ -94,7 +94,7 @@ export function Header({ variant = "light" }: { variant?: "light" | "dark" }) {
           <div
             className={cn(
               "md:hidden border-t py-4",
-              isDark ? "border-white/10" : "border-[--color-mp-line]"
+              isDark ? "border-white/10" : "border-[var(--color-mp-line)]"
             )}
           >
             <nav className="flex flex-col gap-1">
@@ -104,7 +104,7 @@ export function Header({ variant = "light" }: { variant?: "light" | "dark" }) {
                   href={item.href}
                   className={cn(
                     "py-2.5 text-base font-medium",
-                    isDark ? "text-white" : "text-[--color-mp-text]"
+                    isDark ? "text-white" : "text-[var(--color-mp-text)]"
                   )}
                   onClick={() => setOpen(false)}
                 >
@@ -117,7 +117,7 @@ export function Header({ variant = "light" }: { variant?: "light" | "dark" }) {
                   "py-2.5 text-base font-medium border-t mt-2 pt-4",
                   isDark
                     ? "text-white border-white/10"
-                    : "text-[--color-mp-text] border-[--color-mp-line]"
+                    : "text-[var(--color-mp-text)] border-[var(--color-mp-line)]"
                 )}
                 onClick={() => setOpen(false)}
               >
