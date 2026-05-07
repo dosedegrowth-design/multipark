@@ -117,7 +117,7 @@ export default async function UnitPage({
           {/* Two-column main */}
           <div className="grid lg:grid-cols-[1.45fr_1fr] gap-6 mt-8">
             <div className="space-y-6">
-              <UnitMapMini geo={unit.geo} distance={unit.distance} />
+              <UnitMapMini geo={unit.geo} distance={unit.distance} unit={unit} />
 
               {/* About */}
               <div className="rounded-2xl bg-white border border-[var(--color-mp-line)] p-6 md:p-7">

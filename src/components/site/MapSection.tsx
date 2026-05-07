@@ -7,6 +7,7 @@ import { UNITS } from "@/lib/data/units";
 import Link from "next/link";
 import { useState } from "react";
 import { cn } from "@/lib/cn";
+import { UnitsMap } from "./UnitsMap";
 
 const FILTERS = [
   { id: "all", label: "Todas" },
@@ -71,7 +72,7 @@ export function MapSection() {
         <div className="grid lg:grid-cols-[1.2fr_1fr] gap-6">
           {/* Map */}
           <div className="relative aspect-square lg:aspect-auto lg:min-h-[600px] rounded-2xl overflow-hidden bg-white border border-[var(--color-mp-line)]">
-            <FakeMap units={filtered} />
+            <UnitsMap units={filtered} zoom={10} />
           </div>
 
           {/* Lista de unidades */}
@@ -119,57 +120,3 @@ export function MapSection() {
   );
 }
 
-function FakeMap({ units }: { units: typeof UNITS }) {
-  return (
-    <div className="absolute inset-0 bg-[var(--color-mp-cream)]">
-      {/* grid pattern background */}
-      <div
-        className="absolute inset-0 opacity-50"
-        style={{
-          backgroundImage: `
-            linear-gradient(var(--color-mp-line) 1px, transparent 1px),
-            linear-gradient(90deg, var(--color-mp-line) 1px, transparent 1px)
-          `,
-          backgroundSize: "40px 40px",
-        }}
-      />
-
-      {/* roads */}
-      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-        <line x1="0" y1="50" x2="100" y2="50" stroke="white" strokeWidth="0.5" />
-        <line x1="50" y1="0" x2="50" y2="100" stroke="white" strokeWidth="0.5" />
-        <line x1="0" y1="20" x2="100" y2="80" stroke="white" strokeWidth="0.3" />
-      </svg>
-
-      {/* pins */}
-      {units.slice(0, 6).map((u, i) => {
-        const positions = [
-          { left: "30%", top: "35%" },
-          { left: "62%", top: "28%" },
-          { left: "45%", top: "55%" },
-          { left: "70%", top: "65%" },
-          { left: "20%", top: "70%" },
-          { left: "80%", top: "40%" },
-        ];
-        const pos = positions[i];
-        return (
-          <div
-            key={u.id}
-            className="absolute -translate-x-1/2 -translate-y-1/2"
-            style={pos}
-          >
-            <div className="bg-[var(--color-mp-red)] text-white text-xs font-semibold px-2.5 py-1 rounded-full shadow-lg whitespace-nowrap">
-              R$ {u.prices.avulso.promo}
-            </div>
-            <div className="h-2 w-2 bg-[var(--color-mp-red)] rounded-full mx-auto mt-0.5 ring-4 ring-[var(--color-mp-red)]/20" />
-          </div>
-        );
-      })}
-
-      {/* placeholder caption */}
-      <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-2 rounded-lg shadow-sm font-mono text-[10px] uppercase tracking-wider text-[var(--color-mp-text-soft)]">
-        Mapa interativo · Mapbox
-      </div>
-    </div>
-  );
-}

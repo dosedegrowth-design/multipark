@@ -1,6 +1,7 @@
 import { PainelShell } from "@/components/painel/PainelShell";
 import { Badge } from "@/components/ui/Badge";
 import { TrendingUp, AlertCircle, Clock, Building2 } from "lucide-react";
+import { BrazilMap } from "@/components/painel/BrazilMap";
 
 export const metadata = { title: "Rede · Painel Matriz" };
 
@@ -224,68 +225,3 @@ function Alert({
   );
 }
 
-function BrazilMap() {
-  // pinos com posições aproximadas
-  const pins = [
-    { city: "GRU", x: 56, y: 65, type: "red" },
-    { city: "CGH", x: 55, y: 67, type: "red" },
-    { city: "VCP", x: 52, y: 64, type: "red" },
-    { city: "CNF", x: 60, y: 56, type: "red" },
-    { city: "RJ", x: 62, y: 67, type: "warning" },
-    { city: "BH", x: 60, y: 58, type: "red" },
-    { city: "POA", x: 50, y: 82, type: "warning" },
-    { city: "REC", x: 75, y: 35, type: "success" },
-    { city: "SSA", x: 71, y: 47, type: "warning" },
-    { city: "FOR", x: 73, y: 28, type: "warning" },
-    { city: "CWB", x: 53, y: 75, type: "red" },
-    { city: "BSB", x: 53, y: 50, type: "warning" },
-  ];
-
-  return (
-    <div className="absolute inset-0">
-      {/* SVG do Brasil simplificado */}
-      <svg
-        className="absolute inset-0 w-full h-full"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="xMidYMid meet"
-      >
-        <defs>
-          <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="rgba(225,29,46,0.15)" />
-            <stop offset="100%" stopColor="rgba(225,29,46,0)" />
-          </radialGradient>
-        </defs>
-        {/* shape simplificado */}
-        <path
-          d="M 35 30 L 50 25 L 65 22 L 75 30 L 80 45 L 75 60 L 70 75 L 60 85 L 50 88 L 42 80 L 35 70 L 30 55 L 28 40 Z"
-          fill="rgba(255,255,255,0.04)"
-          stroke="rgba(255,255,255,0.1)"
-          strokeWidth="0.3"
-        />
-        <circle cx="55" cy="60" r="30" fill="url(#glow)" />
-      </svg>
-
-      {/* Pins */}
-      {pins.map((p) => (
-        <div
-          key={p.city}
-          className="absolute -translate-x-1/2 -translate-y-1/2"
-          style={{ left: `${p.x}%`, top: `${p.y}%` }}
-        >
-          <div
-            className={`h-2.5 w-2.5 rounded-full animate-pulse-dot ${
-              p.type === "red"
-                ? "bg-[var(--color-mp-red)] ring-4 ring-[var(--color-mp-red)]/20"
-                : p.type === "warning"
-                ? "bg-[var(--color-mp-warning)] ring-4 ring-[var(--color-mp-warning)]/20"
-                : "bg-[var(--color-mp-success)] ring-4 ring-[var(--color-mp-success)]/20"
-            }`}
-          />
-          <div className="absolute top-3.5 left-1/2 -translate-x-1/2 font-mono text-[8px] text-white/65 whitespace-nowrap pointer-events-none">
-            {p.city}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
