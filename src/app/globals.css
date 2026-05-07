@@ -159,6 +159,11 @@ body {
     linear-gradient(135deg, var(--color-mp-wine-900) 0%, var(--color-mp-wine-700) 100%);
 }
 
+.bg-hero-light {
+  background:
+    linear-gradient(180deg, #FFFFFF 0%, var(--color-mp-paper) 60%, var(--color-mp-cream) 100%);
+}
+
 .bg-card-dark {
   background: linear-gradient(180deg, #111111 0%, #0A0A0A 100%);
 }
@@ -218,7 +223,145 @@ body {
   cursor: pointer;
 }
 
-/* === Range slider (light variant) === */
+/* =================================================================
+   PANEL THEME — Sistema de tokens semânticos pra light/dark
+================================================================= */
+.panel-shell {
+  --panel-bg: var(--color-mp-ink);
+  --panel-surface: rgba(255, 255, 255, 0.03);
+  --panel-surface-hover: rgba(255, 255, 255, 0.06);
+  --panel-border: rgba(255, 255, 255, 0.10);
+  --panel-border-strong: rgba(255, 255, 255, 0.15);
+  --panel-text: #FAFAF7;
+  --panel-text-soft: rgba(255, 255, 255, 0.65);
+  --panel-text-muted: rgba(255, 255, 255, 0.45);
+  --panel-text-dim: rgba(255, 255, 255, 0.30);
+  --panel-input-bg: rgba(0, 0, 0, 0.30);
+  --panel-row-hover: rgba(255, 255, 255, 0.02);
+  --panel-table-head: rgba(255, 255, 255, 0.02);
+  --panel-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  color-scheme: dark;
+  background-color: var(--panel-bg);
+  color: var(--panel-text);
+}
+
+.panel-shell .panel-nav-link:hover {
+  background-color: var(--panel-surface);
+  color: var(--panel-text);
+}
+
+/* === Panel theme override pra classes legadas Tailwind ===
+   No tema light, sobrescreve text-white/N, bg-white/N, border-white/N
+   pra cores compatíveis com fundo claro */
+.panel-shell[data-panel-theme="light"] .text-white { color: var(--color-mp-ink) !important; }
+.panel-shell[data-panel-theme="light"] [class*="text-white\\/"]:not(.bg-mp-red *):not(.bg-mp-red),
+.panel-shell[data-panel-theme="light"] .text-white\/85,
+.panel-shell[data-panel-theme="light"] .text-white\/80,
+.panel-shell[data-panel-theme="light"] .text-white\/65,
+.panel-shell[data-panel-theme="light"] .text-white\/60,
+.panel-shell[data-panel-theme="light"] .text-white\/55,
+.panel-shell[data-panel-theme="light"] .text-white\/50,
+.panel-shell[data-panel-theme="light"] .text-white\/45,
+.panel-shell[data-panel-theme="light"] .text-white\/40,
+.panel-shell[data-panel-theme="light"] .text-white\/30 { color: var(--panel-text-soft) !important; }
+
+.panel-shell[data-panel-theme="light"] .text-white\/40,
+.panel-shell[data-panel-theme="light"] .text-white\/45,
+.panel-shell[data-panel-theme="light"] .text-white\/30 { color: var(--panel-text-muted) !important; }
+
+/* Manter texto branco dentro de elementos com fundo vermelho/escuro forte */
+.panel-shell[data-panel-theme="light"] .bg-mp-red .text-white,
+.panel-shell[data-panel-theme="light"] .bg-mp-red [class*="text-white"],
+.panel-shell[data-panel-theme="light"] .bg-\[var\(--color-mp-red\)\] .text-white,
+.panel-shell[data-panel-theme="light"] .bg-\[var\(--color-mp-red\)\] [class*="text-white"] {
+  color: white !important;
+}
+
+/* Fundos brancos translúcidos viram surface escura (sutil) */
+.panel-shell[data-panel-theme="light"] .bg-white\/\[0\.03\],
+.panel-shell[data-panel-theme="light"] .bg-white\/\[0\.04\],
+.panel-shell[data-panel-theme="light"] .bg-white\/\[0\.05\],
+.panel-shell[data-panel-theme="light"] .bg-white\/5,
+.panel-shell[data-panel-theme="light"] .bg-white\/10 {
+  background-color: var(--panel-surface) !important;
+}
+.panel-shell[data-panel-theme="light"] .bg-white\/\[0\.02\],
+.panel-shell[data-panel-theme="light"] .hover\:bg-white\/\[0\.02\]:hover {
+  background-color: rgba(0, 0, 0, 0.02) !important;
+}
+.panel-shell[data-panel-theme="light"] .bg-white\/\[0\.04\],
+.panel-shell[data-panel-theme="light"] .hover\:bg-white\/\[0\.04\]:hover,
+.panel-shell[data-panel-theme="light"] .hover\:bg-white\/\[0\.05\]:hover,
+.panel-shell[data-panel-theme="light"] .hover\:bg-white\/5:hover,
+.panel-shell[data-panel-theme="light"] .hover\:bg-white\/10:hover,
+.panel-shell[data-panel-theme="light"] .hover\:bg-white\/15:hover {
+  background-color: var(--panel-surface-hover) !important;
+}
+
+/* Manter fundo vermelho forte */
+.panel-shell[data-panel-theme="light"] .bg-mp-red,
+.panel-shell[data-panel-theme="light"] .bg-\[var\(--color-mp-red\)\] {
+  background-color: var(--color-mp-red) !important;
+}
+
+/* Bordas brancas viram bordas line */
+.panel-shell[data-panel-theme="light"] [class*="border-white\\/"]:not(.bg-mp-red *) {
+  border-color: var(--panel-border) !important;
+}
+.panel-shell[data-panel-theme="light"] .border-white\/5,
+.panel-shell[data-panel-theme="light"] .border-white\/10,
+.panel-shell[data-panel-theme="light"] .border-white\/15,
+.panel-shell[data-panel-theme="light"] .border-white\/20 {
+  border-color: var(--panel-border) !important;
+}
+
+/* Divisores brancos */
+.panel-shell[data-panel-theme="light"] .divide-white\/5 > :not(:last-child),
+.panel-shell[data-panel-theme="light"] .divide-white\/10 > :not(:last-child) {
+  border-color: var(--panel-border) !important;
+}
+
+/* Backgrounds black/X (tipos cards mock de fotos, gráficos etc) */
+.panel-shell[data-panel-theme="light"] .bg-black\/30,
+.panel-shell[data-panel-theme="light"] .bg-black\/20,
+.panel-shell[data-panel-theme="light"] .bg-black\/40 {
+  background-color: var(--color-mp-cream) !important;
+}
+
+/* Inputs */
+.panel-shell[data-panel-theme="light"] input[type="text"],
+.panel-shell[data-panel-theme="light"] input[type="email"],
+.panel-shell[data-panel-theme="light"] input[type="tel"],
+.panel-shell[data-panel-theme="light"] input[type="search"],
+.panel-shell[data-panel-theme="light"] input:not([type]),
+.panel-shell[data-panel-theme="light"] textarea,
+.panel-shell[data-panel-theme="light"] select {
+  color: var(--panel-text);
+  background-color: var(--panel-input-bg);
+}
+.panel-shell[data-panel-theme="light"] input::placeholder,
+.panel-shell[data-panel-theme="light"] textarea::placeholder {
+  color: var(--panel-text-muted);
+}
+
+.panel-shell[data-panel-theme="light"] {
+  --panel-bg: #FAFAF7;
+  --panel-surface: #FFFFFF;
+  --panel-surface-hover: var(--color-mp-cream);
+  --panel-border: var(--color-mp-line);
+  --panel-border-strong: #D5D2CC;
+  --panel-text: var(--color-mp-ink);
+  --panel-text-soft: #4B4B4B;
+  --panel-text-muted: #6B6B6B;
+  --panel-text-dim: #9A9A9A;
+  --panel-input-bg: #FFFFFF;
+  --panel-row-hover: rgba(0, 0, 0, 0.025);
+  --panel-table-head: rgba(0, 0, 0, 0.025);
+  --panel-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  color-scheme: light;
+}
+
+/* Range slider (light variant) === */
 .mp-range {
   -webkit-appearance: none;
   appearance: none;

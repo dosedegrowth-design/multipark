@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
+import { Logo } from "@/components/ui/Logo";
 
 const FOOTER_NAV = [
   {
@@ -51,14 +51,9 @@ export function Footer() {
       <Container>
         <div className="py-16 grid grid-cols-2 md:grid-cols-6 gap-8">
           <div className="col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-5">
-              <div className="h-8 w-8 rounded-full bg-[var(--color-mp-red)] flex items-center justify-center">
-                <ArrowRight className="h-4 w-4 text-white" />
-              </div>
-              <span className="font-semibold text-lg">
-                MultiPar<span className="text-[var(--color-mp-red)]">K</span>
-              </span>
-            </Link>
+            <div className="mb-5">
+              <Logo variant="white" size="md" asLink />
+            </div>
             <p className="text-sm text-white/60 max-w-xs leading-relaxed mb-6">
               50 anos cuidando do seu carro. Aeroportos, urbano e mensalista — a
               maior rede de estacionamentos pra quem viaja.

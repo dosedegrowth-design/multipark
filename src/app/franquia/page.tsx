@@ -19,10 +19,10 @@ export default function FranquiaPage() {
 
   return (
     <>
-      <Header variant="dark" />
+      <Header variant="light" />
       <main className="flex-1">
         <PageHero
-          variant="dark"
+          variant="light"
           eyebrow="Franquia · Selo Excelência ABF"
           title="Seja dono"
           highlight="da sua MultiPark."

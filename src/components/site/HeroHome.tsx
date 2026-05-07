@@ -6,24 +6,24 @@ import { Sparkles } from "lucide-react";
 
 export function HeroHome() {
   return (
-    <section className="relative bg-hero-dark text-white pb-16 pt-12 md:pt-16 lg:pt-20 overflow-hidden">
-      {/* Decorative arrow logo background */}
+    <section className="relative bg-hero-light text-[var(--color-mp-ink)] pb-16 pt-12 md:pt-16 lg:pt-20 overflow-hidden">
+      {/* Decorative gradient blob */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.04]"
+        className="absolute -top-32 -right-32 h-[500px] w-[500px] rounded-full pointer-events-none opacity-60"
         aria-hidden
-      >
-        <svg
-          className="absolute right-0 top-0 h-full"
-          viewBox="0 0 800 800"
-          fill="none"
-        >
-          <path
-            d="M200 200 L600 400 L200 600 Z"
-            stroke="white"
-            strokeWidth="2"
-          />
-        </svg>
-      </div>
+        style={{
+          background:
+            "radial-gradient(circle, rgba(225,29,46,0.18) 0%, transparent 60%)",
+        }}
+      />
+      <div
+        className="absolute bottom-0 left-1/4 h-[300px] w-[600px] rounded-full pointer-events-none opacity-50"
+        aria-hidden
+        style={{
+          background:
+            "radial-gradient(circle, rgba(225,29,46,0.08) 0%, transparent 70%)",
+        }}
+      />
 
       <Container>
         <div className="grid lg:grid-cols-[1.15fr_1fr] gap-12 lg:gap-16 items-end relative">
@@ -32,7 +32,7 @@ export function HeroHome() {
               <Sparkles className="h-3.5 w-3.5" />
               50 anos cuidando do seu carro
             </div>
-            <h1 className="text-[44px] md:text-[64px] lg:text-[80px] leading-[0.95] font-semibold tracking-[-0.03em] text-white">
+            <h1 className="text-[44px] md:text-[64px] lg:text-[80px] leading-[0.95] font-semibold tracking-[-0.03em] text-[var(--color-mp-ink)]">
               Reserve sua
               <br />
               vaga em{" "}
@@ -40,12 +40,12 @@ export function HeroHome() {
                 2 minutos.
               </span>
             </h1>
-            <p className="mt-5 text-base md:text-lg text-white/70 max-w-lg leading-relaxed">
+            <p className="mt-5 text-base md:text-lg text-[var(--color-mp-text-soft)] max-w-lg leading-relaxed">
               Aeroporto, urbano ou mensalista. PIX, cartão ou pague na chegada.
               Suporte humano via WhatsApp em todas as etapas.
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs font-mono uppercase tracking-[0.18em] text-white/45">
+            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs font-mono uppercase tracking-[0.18em] text-[var(--color-mp-text-muted)]">
               <Stat>50 anos</Stat>
               <Stat>+200 unidades</Stat>
               <Stat>+50k carros/mês</Stat>
@@ -83,7 +83,7 @@ function Stat({ children, last }: { children: React.ReactNode; last?: boolean })
     <span className="flex items-center gap-3">
       <span className="text-[var(--color-mp-red)]">✦</span>
       <span>{children}</span>
-      {!last && <span className="ml-1 text-white/20">·</span>}
+      {!last && <span className="ml-1 text-[var(--color-mp-line)]">·</span>}
     </span>
   );
 }
@@ -99,8 +99,8 @@ function AirportCard({
       href={`/aeroportos/${airport.name.toLowerCase()}`}
       className={`relative rounded-[14px] p-4 md:p-5 h-[140px] md:h-[160px] flex flex-col justify-between border transition-transform hover:-translate-y-0.5 ${
         dark
-          ? "bg-[var(--color-mp-ink)] border-white/5"
-          : "bg-white text-[var(--color-mp-ink)] border-transparent"
+          ? "bg-[var(--color-mp-ink)] border-[var(--color-mp-ink)] text-white"
+          : "bg-white text-[var(--color-mp-ink)] border-[var(--color-mp-line)]"
       }`}
     >
       <span
@@ -136,9 +136,9 @@ function AirportSummary({
   note: string;
 }) {
   return (
-    <div className="rounded-xl bg-white/5 border border-white/10 px-4 py-3">
-      <div className="font-medium text-white">{city}</div>
-      <div className="text-xs text-white/50 mt-0.5">
+    <div className="rounded-xl bg-white border border-[var(--color-mp-line)] px-4 py-3 hover:border-[var(--color-mp-text-soft)] transition-colors">
+      <div className="font-medium text-[var(--color-mp-ink)]">{city}</div>
+      <div className="text-xs text-[var(--color-mp-text-soft)] mt-0.5">
         {units} unidades · {note}
       </div>
     </div>

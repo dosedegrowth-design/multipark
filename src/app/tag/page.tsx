@@ -15,10 +15,10 @@ export const metadata = {
 export default function TagPage() {
   return (
     <>
-      <Header variant="dark" />
+      <Header variant="light" />
       <main className="flex-1">
         <PageHero
-          variant="dark"
+          variant="light"
           eyebrow="TAG MultiPark · by Move Mais"
           title="Passe sem parar"
           highlight="em qualquer cancela."

@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { Logo } from "@/components/ui/Logo";
 import { cn } from "@/lib/cn";
 
 const NAV = [
@@ -31,19 +32,8 @@ export function Header({ variant = "light" }: { variant?: "light" | "dark" }) {
     >
       <Container>
         <div className="flex items-center h-16 md:h-[72px] gap-6">
-          <Link href="/" className="flex items-center gap-2 shrink-0 group">
-            <div className="relative h-8 w-8 rounded-full bg-[var(--color-mp-red)] flex items-center justify-center transition-transform group-hover:scale-105">
-              <ArrowRight className="h-4 w-4 text-white" />
-            </div>
-            <span
-              className={cn(
-                "font-semibold text-lg tracking-tight",
-                isDark ? "text-white" : "text-[var(--color-mp-ink)]"
-              )}
-            >
-              MultiPar<span className="text-[var(--color-mp-red)]">K</span>
-            </span>
-          </Link>
+          <Logo variant={isDark ? "white" : "color"} size="md" asLink />
+
 
           <nav className="hidden md:flex items-center gap-7 ml-4">
             {NAV.map((item) => (

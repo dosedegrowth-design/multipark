@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { MessageCircle, X, Send, ArrowRight } from "lucide-react";
+import { MessageCircle, X, Send } from "lucide-react";
+import { Logo } from "@/components/ui/Logo";
 import { cn } from "@/lib/cn";
 
 export function FloatingChat() {
@@ -32,15 +33,10 @@ export function FloatingChat() {
           {/* Header */}
           <div className="bg-[var(--color-mp-wine-900)] text-white p-4 flex items-start justify-between">
             <div className="flex items-center gap-3">
-              <div className="h-9 w-9 rounded-full bg-[var(--color-mp-red)] flex items-center justify-center">
-                <ArrowRight className="h-4 w-4 text-white" />
-              </div>
-              <div>
-                <div className="font-semibold leading-tight">Multipark</div>
-                <div className="text-xs text-white/60 flex items-center gap-1.5 mt-0.5">
-                  <span className="h-1.5 w-1.5 bg-[var(--color-mp-success)] rounded-full" />
-                  online · responde em segundos
-                </div>
+              <Logo variant="white" size="sm" />
+              <div className="text-xs text-white/60 flex items-center gap-1.5 mt-0.5">
+                <span className="h-1.5 w-1.5 bg-[var(--color-mp-success)] rounded-full" />
+                online · responde em segundos
               </div>
             </div>
           </div>
@@ -84,8 +80,17 @@ export function FloatingChat() {
 function BotBubble({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex items-start gap-2 max-w-[85%]">
-      <div className="h-6 w-6 rounded-full bg-[var(--color-mp-red)] shrink-0 mt-0.5 flex items-center justify-center">
-        <ArrowRight className="h-3 w-3 text-white" />
+      <div className="h-6 w-6 rounded-full bg-[var(--color-mp-red)] shrink-0 mt-0.5 flex items-center justify-center overflow-hidden">
+        <svg viewBox="0 0 48 48" className="h-6 w-6">
+          <circle cx="24" cy="24" r="22" fill="var(--color-mp-red)" />
+          <path
+            d="M16 16 L32 32 M32 32 L32 22 M32 32 L22 32"
+            stroke="white"
+            strokeWidth="3.5"
+            strokeLinecap="square"
+            fill="none"
+          />
+        </svg>
       </div>
       <div className="bg-white px-4 py-2.5 rounded-2xl rounded-tl-sm text-sm text-[var(--color-mp-text)] shadow-sm">
         {children}

@@ -11,7 +11,7 @@ import { FloatingChat } from "@/components/site/FloatingChat";
 export default function HomePage() {
   return (
     <>
-      <Header variant="dark" />
+      <Header variant="light" />
       <main className="flex-1">
         <HeroHome />
         <HowItWorks />
