@@ -138,26 +138,6 @@ export default function FranquiaPage() {
       </main>
       <Footer />
       <FloatingChat />
-      <style jsx global>{`
-        .mp-range {
-          -webkit-appearance: none;
-          appearance: none;
-          height: 4px;
-          background: var(--color-mp-line);
-          border-radius: 2px;
-          outline: none;
-        }
-        .mp-range::-webkit-slider-thumb {
-          -webkit-appearance: none;
-          height: 20px;
-          width: 20px;
-          background: white;
-          border: 3px solid var(--color-mp-red);
-          border-radius: 50%;
-          cursor: pointer;
-          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-        }
-      `}</style>
     </>
   );
 }

@@ -9,7 +9,6 @@ import {
   Car,
   Tag,
   FileText,
-  Image as ImageIcon,
   Users,
   Wallet,
   Megaphone,
@@ -19,10 +18,8 @@ import {
   ChevronDown,
   Bell,
   Search,
-  Grid3x3,
-  Building2,
-  TrendingUp,
-  Globe,
+  Settings,
+  BadgeCheck,
 } from "lucide-react";
 
 export function PainelShell({
@@ -50,22 +47,20 @@ export function PainelShell({
     { label: "Vagas livres", icon: Car, href: "/painel/unidade/cumbica-01/vagas" },
     { label: "Preços", icon: Tag, href: "/painel/unidade/cumbica-01/precos" },
     { label: "Conteúdo", icon: FileText, href: "/painel/unidade/cumbica-01/conteudo" },
-    { label: "Fotos", icon: ImageIcon, href: "/painel/unidade/cumbica-01/conteudo" },
     { label: "Clientes", icon: Users, href: "/painel/unidade/cumbica-01/clientes" },
     { label: "Financeiro", icon: Wallet, href: "/painel/unidade/cumbica-01/financeiro" },
     { label: "Marketing", icon: Megaphone, href: "/painel/unidade/cumbica-01/marketing" },
     { label: "Reviews", icon: Star, href: "/painel/unidade/cumbica-01/reviews" },
-    { label: "Integrações", icon: Plug, href: "/painel/unidade/cumbica-01/conteudo" },
+    { label: "Configurações", icon: Settings, href: "/painel/unidade/cumbica-01/configuracoes" },
   ];
 
   const navMatriz = [
     { label: "Visão geral", icon: LayoutDashboard, href: "/painel/matriz/rede" },
-    { label: "Rede", icon: Globe, href: "/painel/matriz/rede" },
-    { label: "Unidades", icon: Building2, href: "/painel/matriz/rede" },
     { label: "Financeiro", icon: Wallet, href: "/painel/matriz/financeiro" },
-    { label: "Marketing", icon: Megaphone, href: "/painel/matriz/marketing" },
     { label: "Franqueados", icon: Users, href: "/painel/matriz/franqueados" },
-    { label: "Performance", icon: TrendingUp, href: "/painel/matriz/financeiro" },
+    { label: "Marketing", icon: Megaphone, href: "/painel/matriz/marketing" },
+    { label: "Multicliente", icon: BadgeCheck, href: "/painel/matriz/multicliente" },
+    { label: "TAG MultiPark", icon: Tag, href: "/painel/matriz/tag" },
     { label: "CMS", icon: FileText, href: "/painel/matriz/cms" },
     { label: "Integrações", icon: Plug, href: "/painel/matriz/integracoes" },
   ];

@@ -47,6 +47,9 @@ export function SearchBar({ variant = "hero" }: { variant?: "hero" | "compact" }
           value={days}
           onChange={(e) => setDays(parseInt(e.target.value))}
           className="flex-1 mp-range"
+          style={{
+            background: `linear-gradient(to right, var(--color-mp-red) 0%, var(--color-mp-red) ${(days / 30) * 100}%, var(--color-mp-line) ${(days / 30) * 100}%, var(--color-mp-line) 100%)`,
+          }}
         />
         <div className="text-right shrink-0">
           <div className="text-xs text-[var(--color-mp-text-soft)]">
@@ -58,42 +61,6 @@ export function SearchBar({ variant = "hero" }: { variant?: "hero" | "compact" }
         </div>
       </div>
 
-      <style jsx>{`
-        .mp-range {
-          -webkit-appearance: none;
-          appearance: none;
-          height: 4px;
-          background: linear-gradient(
-            to right,
-            var(--color-mp-red) 0%,
-            var(--color-mp-red) ${(days / 30) * 100}%,
-            var(--color-mp-line) ${(days / 30) * 100}%,
-            var(--color-mp-line) 100%
-          );
-          border-radius: 2px;
-          outline: none;
-        }
-        .mp-range::-webkit-slider-thumb {
-          -webkit-appearance: none;
-          appearance: none;
-          height: 20px;
-          width: 20px;
-          background: white;
-          border: 3px solid var(--color-mp-red);
-          border-radius: 50%;
-          cursor: pointer;
-          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-        }
-        .mp-range::-moz-range-thumb {
-          height: 20px;
-          width: 20px;
-          background: white;
-          border: 3px solid var(--color-mp-red);
-          border-radius: 50%;
-          cursor: pointer;
-          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-        }
-      `}</style>
     </div>
   );
 }
